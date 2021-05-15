@@ -1,0 +1,22 @@
+# lint
+pylint
+flake8
+black
+yapf
+isort
+
+# neovim
+jedi
+neovim
+pynvim
+
+# tools
+pipenv
+httpie
+ipython
+jupyter
+django
+mycli
+
+# requirements
+pew[pythonz]

@@ -1,3 +1,9 @@
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -145,25 +151,21 @@ f() {
 # zsh auto suggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
-
 function sson() {
-	export http_proxy=http://127.0.0.1:2222
-	export https_proxy=http://127.0.0.1:2222
 	#export all_proxy=http://localhost:9012
 }
 function ssoff() {
-	unset http_proxy https_proxy
+	unset http_proxy https_proxy all_proxy
 }
 
 alias ipinfo="curl ipinfo.io"
 alias ipv4="curl ipv4.ip.sb"
 alias ipv6="curl ipv6.ip.sb"
 alias speed="speedtest-cli --simple"
+alias ping-jms="for i in {1..5};do ping c20s$i.jamjams.net -c 5 | grep rtt;done"
 
-# clipmenu
-export CM_LAUNCHER=rofi
-alias clip='/usr/bin/clipmenu -theme solarized-darker -font "Noto Sans Mono 12"'
+# roficlip
+alias c='/usr/bin/roficlip'
 
 # options
 setopt histignorealldups

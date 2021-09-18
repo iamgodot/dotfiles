@@ -1,0 +1,14 @@
+f() {
+  local files
+  IFS=$'\n' files=($(fzf --height 40% --query="$1" --multi --preview 'cat {}'))
+  [[ -n "$files" ]] && ${EDITOR:-nvim} "${files[@]}"
+}
+
+sson() {
+	export http_proxy=http://localhost:2222
+	export https_proxy=http://localhost:2222
+	export all_proxy=http://localhost:2222
+}
+ssoff() {
+	unset http_proxy https_proxy all_proxy
+}

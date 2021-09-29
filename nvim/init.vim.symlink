@@ -94,9 +94,10 @@ let g:airline#extensions#tmuxline#enabled = 1
 let g:tmuxline_powerline_separators = 0
 
 " Fzf
-nnoremap <leader>p :Files<CR>
+nnoremap <leader>p :GFiles<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>f :Ag<CR>
+nnoremap <leader>w :Ag <C-R><C-W><CR>
 let g:fzf_preview_window = ''
 let g:fzf_buffers_jump = 1
 

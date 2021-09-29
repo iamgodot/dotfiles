@@ -1,0 +1,12 @@
+[include]
+    path = ~/.gitconfig.local
+[alias]
+	ci = commit
+	amend = ci
+	co = checkout
+[core]
+	editor = vim
+[help]
+	autocorrect = 0
+[commit]
+	template = /home/godot/.gitmessage

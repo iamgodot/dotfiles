@@ -1,0 +1,7 @@
+typora
+dropbox
+clipster
+roficlip
+vim-plug
+google-chrome
+zsh-theme-powerlevel10k

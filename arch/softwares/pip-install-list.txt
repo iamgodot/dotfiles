@@ -19,6 +19,7 @@ ipython
 jupyter
 django
 mycli
+cookiecutter
 
 # requirements
 pew[pythonz]

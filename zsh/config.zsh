@@ -29,3 +29,6 @@ f() {
 
 # Pew
 source $(pew shell_config)
+
+# Pip
+export PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple

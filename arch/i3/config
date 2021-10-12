@@ -25,14 +25,14 @@ focus_follows_mouse no
 for_window [class="^.*"] border pixel 0
 
 # gaps
-gaps inner 10
+gaps inner 20
 gaps outer 0
 
-# Compton
-exec_always --no-startup-id "compton --config ~/.config/i3/compton.conf"
+# Picom
+exec_always --no-startup-id "picom --config ~/.config/picom/picom.conf"
 
 # background
-exec --no-startup-id feh --bg-scale "/home/godot/images/wallpapers/wallhaven-k9kov6_1920x1080.png"
+exec --no-startup-id "feh --bg-scale ~/images/wallpapers/lookupsky.png"
 
 # clipboard manager
 exec --no-startup-id clipster -d

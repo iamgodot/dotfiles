@@ -1,0 +1,9 @@
+{
+  "proxies": {
+    "default": {
+      "HTTP_PROXY":  "http://localhost:2222",
+      "HTTPS_PROXY": "http://localhost:2222",
+      "noProxy": ""
+    }
+  }
+}

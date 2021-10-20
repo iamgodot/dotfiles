@@ -25,7 +25,7 @@ offset-y = 0
 offset-x = 0
 
 border-top-size = 0
-border-bottom-size = 10
+border-bottom-size = 0
 border-right-size = 10
 border-left-size = 10
 
@@ -133,10 +133,10 @@ label-foreground = ${colors.primary}
 type = internal/date
 interval = 5
 
-date = %m-%d
+date = %a %b %d %X
 date-alt = " %Y-%m-%d"
 
-time = %H:%M
+;time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = " "
@@ -229,6 +229,7 @@ ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
+ws-icon-5 = 6;
 ws-icon-default = 
 
 ; Available tags:

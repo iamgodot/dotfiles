@@ -34,5 +34,6 @@ xset -dpms
 /usr/bin/dunst &
 /usr/bin/dropbox &
 /usr/bin/flameshot &
+/usr/bin/albert &
 
 exec i3

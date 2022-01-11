@@ -1,9 +1,9 @@
 {
-  "proxies": {
-    "default": {
-      "HTTP_PROXY":  "http://localhost:2222",
-      "HTTPS_PROXY": "http://localhost:2222",
-      "noProxy": ""
-    }
-  }
+  "registry-mirrors": [
+    "https://mirror.ccs.tencentyun.com",
+    "https://hub-mirror.c.163.com",
+    "https://docker.mirrors.ustc.edu.cn",
+    "http://f1361db2.m.daocloud.io",
+    "https://dockerhub.azk8s.cn"
+  ]
 }

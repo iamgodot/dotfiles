@@ -46,8 +46,6 @@ inoremap <C-c> <ESC>
 " deselect highlight search
 nnoremap <C-l> :noh<CR>
 
-let g:ale_disable_lsp = 1
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'liuchengxu/space-vim-dark'
@@ -67,11 +65,17 @@ Plug 'mbbill/undotree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'honza/vim-snippets'
+Plug 'yamatsum/nvim-cursorline'
+Plug 'goolord/alpha-nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'ggandor/lightspeed.nvim'
+Plug 'liuchengxu/vista.vim'
+Plug 'norcalli/nvim-colorizer.lua'
 
 call plug#end()
 
 colorscheme space-vim-dark
-" set termguicolors
+set termguicolors
 
 " Airline config
 let g:airline_powerline_fonts = 0
@@ -121,6 +125,7 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+let g:ale_disable_lsp = 1
 
 " Undotree
 nnoremap <F3> :UndotreeToggle<CR>
@@ -185,3 +190,20 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
+
+" Alpha startup
+lua <<EOF
+require'alpha'.setup(require'alpha.themes.startify'.opts)
+EOF
+
+" Lightspeed
+nmap <leader>s <Plug>Lightspeed_s
+nmap <leader>S <Plug>Lightspeed_S
+
+" Colorizer
+lua require'colorizer'.setup()
+
+" Transparent bg
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+

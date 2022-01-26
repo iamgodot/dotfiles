@@ -6,10 +6,10 @@ window:
     x: 10
     y: 10
   decorations: none
+  opacity: 0.5
 scrolling:
   history: 10000
   multiplier: 3
-background_opacity: 0.6
 font:
   normal:
     family: mononoki Nerd Font

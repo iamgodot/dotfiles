@@ -26,6 +26,9 @@ lvim.builtin.lualine.sections = {
 
 -- vim opts
 vim.opt.scrolloff = 0
+vim.opt.cursorline = false
+vim.opt.relativenumber = true
+vim.opt.clipboard = 'unnamed'
 
 -- keymappings [view all the defaults by pressing <leader>Lk]
 lvim.leader = "space"
@@ -96,6 +99,7 @@ lvim.builtin.treesitter.ensure_installed = {
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = false
+lvim.builtin.treesitter.indent.enable = false
 
 -- generic LSP settings
 
@@ -150,25 +154,6 @@ linters.setup {
 
 -- Additional Plugins
 lvim.plugins = {
-  {
-    "tpope/vim-fugitive",
-    cmd = {
-      "G",
-      "Git",
-      "Gdiffsplit",
-      "Gread",
-      "Gwrite",
-      "Ggrep",
-      "GMove",
-      "GDelete",
-      "GBrowse",
-      "GRemove",
-      "GRename",
-      "Glgrep",
-      "Gedit"
-    },
-    ft = {"fugitive"}
-  },
   {"kyazdani42/nvim-web-devicons"},
   {"liuchengxu/space-vim-dark"},
   {"overcache/NeoSolarized"},
@@ -176,6 +161,7 @@ lvim.plugins = {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
   },
+  {"tpope/vim-surround"},
 }
 
 -- Autocommands (https://neovim.io/doc/user/autocmd.html)

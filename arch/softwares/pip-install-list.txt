@@ -1,25 +1,21 @@
 --index https://pypi.douban.com/simple
 
-# lint
+# Lint
 pylint
 flake8
 black
 yapf
 isort
+yamllint
 
-# neovim
-jedi
-neovim
-pynvim
-
-# tools
-pipenv
+# Tools
 httpie
 ipython
-jupyter
-django
 mycli
 cookiecutter
-
-# requirements
+tmuxp
 pew[pythonz]
+py-tldr
+
+# Neovim
+pynvim

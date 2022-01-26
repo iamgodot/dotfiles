@@ -38,3 +38,5 @@ xss-lock
 picom
 powerline
 powerline-fonts
+bind  # For dig cmd
+ncdu

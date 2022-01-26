@@ -39,4 +39,6 @@ xset -dpms
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
+# export DESKTOP_SESSION=plasma
+# exec startplasma-x11
 exec i3

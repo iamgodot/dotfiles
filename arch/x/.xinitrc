@@ -36,4 +36,7 @@ xset -dpms
 /usr/bin/flameshot &
 /usr/bin/albert &
 
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+
 exec i3

@@ -5,22 +5,25 @@ window:
   padding:
     x: 10
     y: 10
-  decorations: none
-  opacity: 0.5
+  decorations: buttonless
+  opacity: 1
+  startup_mode: Windowed
 scrolling:
   history: 10000
   multiplier: 3
+mouse:
+  hide_when_typing: true
 font:
   normal:
-    family: mononoki Nerd Font
+    family: Monaco
     style: Regular
   bold:
-    family: mononoki Nerd Font
+    family: Monaco
     style: Bold
   italic:
-    family: mononoki Nerd Font
+    family: Monaco
     style: Italic
-  size: 12
+  size: 15
 cursor:
   style: Block
   unfocused_hollow: true

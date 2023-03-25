@@ -8,6 +8,7 @@ window:
   decorations: buttonless
   opacity: 1
   startup_mode: Windowed
+  option_as_alt: Both
 scrolling:
   history: 10000
   multiplier: 3

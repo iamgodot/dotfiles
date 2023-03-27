@@ -1,0 +1,13 @@
+zsh
+tmux
+neovim
+fzf
+tree
+fd
+ag
+jq
+tig
+pipx
+pyenv
+pyenv-virtualenv
+alacritty

@@ -1,12 +1,15 @@
-#!/usr/bin/bash
+#!/bin/bash
 
-echo 'Existing config files will be backed up using `ln -b`.'
+#echo 'Existing config files will be backed up using `ln -b`.'
 
-echo 'Setting up config files for zsh & tmux & neovim now.'
-ln -s $HOME/.dotfiles/zsh/zshrc.symlink $HOME/.zshrc -b
-ln -s $HOME/.dotfiles/tmux/tmux.conf.symlink $HOME/.tmux.conf -b
-ln -s $HOME/.dotfiles/nvim/init.vim.symlink $HOME/.config/nvim/init.vim -b
-echo 'Finished setup for the suite.'
+ln -si $HOME/.dotfiles/zsh/zshrc.symlink $HOME/.zshrc
+ln -si $HOME/.dotfiles/tmux/tmux.conf.symlink $HOME/.tmux.conf
+mkdir -p $HOME/.config/nvim
+ln -si $HOME/.dotfiles/nvim/init.vim.symlink $HOME/.config/nvim/init.vim
+ln -si $HOME/.dotfiles/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
+mkdir -p $HOME/.ipython/profile_default/startup
+ln -si $HOME/.ipython/ipython_config.py $HOME/.ipython/profile_default/ipython_config.py
+ln -si $HOME/.ipython/startup/utils.py $HOME/.ipython/profile_default/startup/utils.py
 
 setup_gitconfig () {
     echo 'Setting up git config files now.'
@@ -15,9 +18,9 @@ setup_gitconfig () {
     echo 'What is your github author email?'
     read -e git_author_email
     sed -e "s/AUTHORNAME/$git_author_name/g" -e "s/AUTHOREMAIL/$git_author_email/g" $HOME/.dotfiles/git/gitconfig.local.symlink.example > $HOME/.dotfiles/git/gitconfig.local.symlink
-    ln -s $HOME/.dotfiles/git/gitconfig.symlink $HOME/.gitconfig -b
-    ln -s $HOME/.dotfiles/git/gitconfig.local.symlink $HOME/.gitconfig.local -b
-    ln -s $HOME/.dotfiles/git/gitmessage.symlink $HOME/.gitmessage -b
+    ln -si $HOME/.dotfiles/git/gitconfig.symlink $HOME/.gitconfig
+    ln -si $HOME/.dotfiles/git/gitconfig.local.symlink $HOME/.gitconfig.local
+    ln -si $HOME/.dotfiles/git/gitmessage.symlink $HOME/.gitmessage
     echo 'Finished git config setup.'
 }
 

@@ -4,6 +4,11 @@ brew-install:
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 	cat inventory/common.txt | xargs brew install
 
+pip-install:
+	brew install pipx
+	pipx ensurepath
+	cat inventory/pip.txt | xargs pipx install
+
 setup-zsh:
 	./scripts/setup-zsh.sh
 

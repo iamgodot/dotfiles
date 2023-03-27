@@ -4,10 +4,11 @@ neovim
 fzf
 tree
 fd
-ag
+the_silver_searcher
 jq
 tig
-pipx
 pyenv
 pyenv-virtualenv
 alacritty
+cloc
+htop

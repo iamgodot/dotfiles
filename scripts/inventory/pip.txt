@@ -13,9 +13,10 @@ httpie
 ipython
 mycli
 cookiecutter
-tmuxp
-pew[pythonz]
 py-tldr
+ansible
+django
+poetry
 
 # Neovim
 pynvim

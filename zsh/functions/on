@@ -1,0 +1,3 @@
+export http_proxy=http://localhost:1087
+export https_proxy=http://localhost:1087
+export all_proxy=http://localhost:1087

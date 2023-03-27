@@ -1,21 +1,9 @@
-tree
-htop
+bind
+ncdu
 iftop
 iotop
-neovim
-tmux
-zsh
 python-pip
-pyenv
-docker
-ansible
-hub
-tig
-cloc
-tldr
 speedtest-cli
-jq
-the_silver_searcher
 rsync
 flameshot
 zathura
@@ -36,7 +24,3 @@ rofi
 feh
 xss-lock
 picom
-powerline
-powerline-fonts
-bind  # For dig cmd
-ncdu

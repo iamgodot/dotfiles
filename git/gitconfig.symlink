@@ -9,6 +9,6 @@
 [help]
 	autocorrect = 0
 [commit]
-	template = /home/godot/.gitmessage
+	template = ~/.gitmessage
 [http]
 	proxy = http://localhost:2222

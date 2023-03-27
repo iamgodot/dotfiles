@@ -1,7 +1,8 @@
 .PHONY: brew-install setup-zsh setup-nvim setup-dotfiles config-mac
 
 brew-install:
-	./scripts/brew-install.sh
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+	cat inventory/common.txt | xargs brew install
 
 setup-zsh:
 	./scripts/setup-zsh.sh

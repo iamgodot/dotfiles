@@ -11,4 +11,4 @@
 [commit]
 	template = ~/.gitmessage
 [http]
-	proxy = http://localhost:2222
+	proxy = http://localhost:1087

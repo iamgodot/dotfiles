@@ -16,13 +16,13 @@ mouse:
   hide_when_typing: true
 font:
   normal:
-    family: Monaco
+    family: Mononoki Nerd Font
     style: Regular
   bold:
-    family: Monaco
+    family: Mononoki Nerd Font
     style: Bold
   italic:
-    family: Monaco
+    family: Mononoki Nerd Font
     style: Italic
   size: 15
 cursor:

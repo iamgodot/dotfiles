@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 for name in .xinitrc .Xmodmap
     do ln -s $HOME/.dotfiles/arch/x/$name $HOME/$name

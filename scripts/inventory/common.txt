@@ -1,7 +1,6 @@
 zsh
 tmux
 neovim
-fzf
 tree
 fd
 the_silver_searcher

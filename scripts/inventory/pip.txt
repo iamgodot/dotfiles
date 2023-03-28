@@ -1,14 +1,9 @@
---index https://pypi.douban.com/simple
-
-# Lint
 pylint
 flake8
 black
 yapf
 isort
 yamllint
-
-# Tools
 httpie
 ipython
 mycli
@@ -17,6 +12,3 @@ py-tldr
 ansible
 django
 poetry
-
-# Neovim
-pynvim

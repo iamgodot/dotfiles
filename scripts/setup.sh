@@ -4,8 +4,7 @@
 
 ln -si $HOME/.dotfiles/zsh/zshrc.symlink $HOME/.zshrc
 ln -si $HOME/.dotfiles/tmux/tmux.conf.symlink $HOME/.tmux.conf
-mkdir -p $HOME/.config/nvim
-ln -si $HOME/.dotfiles/nvim/init.vim.symlink $HOME/.config/nvim/init.vim
+ln -si $HOME/.dotfiles/nvim $HOME/.config/nvim
 ln -si $HOME/.dotfiles/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty.yml
 mkdir -p $HOME/.ipython/profile_default/startup
 ln -si $HOME/.ipython/ipython_config.py $HOME/.ipython/profile_default/ipython_config.py

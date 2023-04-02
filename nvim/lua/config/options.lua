@@ -33,7 +33,6 @@ vim.o.timeoutlen = 300
 vim.o.completeopt = 'menuone,noselect'
 
 -- NOTE: You should make sure your terminal supports this
--- TODO
 vim.cmd.colorscheme 'catppuccin-frappe'
 vim.o.termguicolors = true
 

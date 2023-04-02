@@ -5,15 +5,6 @@ return {
         -- Automatically install LSPs to stdpath for neovim
         'williamboman/mason.nvim',
         'williamboman/mason-lspconfig.nvim',
-
-        -- Useful status updates for LSP
-        -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-        -- TODO
-        { 'j-hui/fidget.nvim', opts = {} },
-
-        -- Additional lua configuration, makes nvim stuff amazing!
-        -- TODO
-        'folke/neodev.nvim',
     },
     config = function()
         -- LSP settings.
@@ -73,9 +64,6 @@ return {
             -- rust_analyzer = {},
             -- tsserver = {},
         }
-
-        -- Setup neovim lua configuration
-        require('neodev').setup()
 
         -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
         local capabilities = vim.lsp.protocol.make_client_capabilities()

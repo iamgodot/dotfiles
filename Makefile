@@ -19,13 +19,10 @@ pip-install:
 setup-zsh:
 	./scripts/setup-zsh.sh
 
-setup-nvim:
-	./scripts/setup-nvim.sh
-
 setup-dotfiles:
 	./scripts/setup.sh
 
-setup-all: setup-zsh setup-nvim setup-dotfiles
+setup-all: setup-zsh setup-dotfiles
 	echo 'Finished setup.'
 
 config-mac: brew-install pip-install setup-all

@@ -35,24 +35,22 @@ Plugin = {
 		})
 
 		-- See `:help telescope.builtin`
-		vim.keymap.set(
-			"n",
-			"<leader>o",
-			require("telescope.builtin").oldfiles,
-			{ desc = "[?] Find recently opened files" }
-		)
-		vim.keymap.set("n", "<leader>b", require("telescope.builtin").buffers, { desc = "[ ] Find existing buffers" })
+		builtin = require("telescope.builtin")
+		vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "[ ] Find existing buffers" })
 		vim.keymap.set("n", "<leader>/", function()
-			require("telescope.builtin").current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+			builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 				winblend = 10,
 				previewer = false,
 			}))
 		end, { desc = "[/] Fuzzily search in current buffer" })
-
-		vim.keymap.set("n", "<leader>p", require("telescope.builtin").find_files, { desc = "[S]earch [F]iles" })
-		vim.keymap.set("n", "<leader>hh", require("telescope.builtin").help_tags, { desc = "[S]earch [H]elp" })
-		vim.keymap.set("n", "<leader>w", require("telescope.builtin").grep_string, { desc = "[S]earch current [W]ord" })
-		vim.keymap.set("n", "<leader>f", require("telescope.builtin").live_grep, { desc = "[S]earch by [G]rep" })
+		vim.keymap.set("n", "<leader>p", builtin.find_files, { desc = "[S]earch [F]iles" })
+		vim.keymap.set("n", "<leader>h", builtin.help_tags, { desc = "[S]earch [H]elp" })
+		vim.keymap.set("n", "<leader>w", builtin.grep_string, { desc = "[S]earch current [W]ord" })
+		vim.keymap.set("n", "<leader>f", builtin.live_grep, { desc = "[S]earch by [G]rep" })
+		vim.keymap.set("n", "<leader>k", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
+		vim.keymap.set("n", "<leader>cm", builtin.commands, { desc = "[S]earch [C]ommands" })
+		vim.keymap.set("n", "<leader>cs", builtin.colorscheme, { desc = "[S]earch [C]olorschemes" })
+		vim.keymap.set("n", "<leader>v", builtin.vim_options, { desc = "[S]earch [V]im options" })
 	end,
 }
 

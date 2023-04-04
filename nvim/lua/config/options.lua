@@ -9,7 +9,7 @@ vim.wo.number = true
 vim.o.relativenumber = true
 
 -- Enable mouse mode
-vim.o.mouse = 'a'
+vim.o.mouse = "a"
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -22,7 +22,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- Keep signcolumn on by default
-vim.wo.signcolumn = 'yes'
+vim.wo.signcolumn = "yes"
 
 -- Decrease update time
 vim.o.updatetime = 250
@@ -30,10 +30,10 @@ vim.o.timeout = true
 vim.o.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
+vim.o.completeopt = "menuone,noselect"
 
 -- NOTE: You should make sure your terminal supports this
-vim.cmd.colorscheme 'catppuccin-frappe'
+vim.cmd.colorscheme("catppuccin-frappe")
 vim.o.termguicolors = true
 
 vim.o.swapfile = false

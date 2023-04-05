@@ -51,6 +51,7 @@ Plugin = {
 		vim.keymap.set("n", "<leader>cm", builtin.commands, { desc = "[S]earch [C]ommands" })
 		vim.keymap.set("n", "<leader>cs", builtin.colorscheme, { desc = "[S]earch [C]olorschemes" })
 		vim.keymap.set("n", "<leader>v", builtin.vim_options, { desc = "[S]earch [V]im options" })
+		vim.keymap.set("n", "<leader>g", builtin.git_commits, { desc = "[S]earch [G]it commits" })
 	end,
 }
 

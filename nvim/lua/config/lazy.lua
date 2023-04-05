@@ -39,6 +39,6 @@ require("lazy").setup({
 		{ import = "plugins" },
 	},
 	defaults = { lazy = false, version = false },
-	checker = { enabled = true, notify = true },
+	checker = { enabled = true, notify = false },
 	change_detection = { enabled = true, notify = false },
 })

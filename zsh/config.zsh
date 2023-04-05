@@ -19,9 +19,3 @@ setopt histignorealldups
 
 fpath=($HOME/.dotfiles/zsh/functions $fpath)
 autoload -U $HOME/.dotfiles/zsh/functions/*(:t)
-
-# Pew
-source $(pew shell_config)
-
-# Pip
-export PIP_INDEX_URL=https://pypi.tuna.tsinghua.edu.cn/simple

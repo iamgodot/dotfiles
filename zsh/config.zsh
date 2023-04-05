@@ -17,8 +17,8 @@ export EDITOR="$VISUAL"
 
 setopt histignorealldups
 
-fpath=($HOME/.dotfiles/functions $fpath)
-autoload -U $HOME/.dotfiles/functions/*(:t)
+fpath=($HOME/.dotfiles/zsh/functions $fpath)
+autoload -U $HOME/.dotfiles/zsh/functions/*(:t)
 
 # Pew
 source $(pew shell_config)

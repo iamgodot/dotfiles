@@ -9,6 +9,7 @@ ln -si $HOME/.dotfiles/alacritty/alacritty.yml $HOME/.config/alacritty/alacritty
 mkdir -p $HOME/.ipython/profile_default/startup
 ln -si $HOME/.ipython/ipython_config.py $HOME/.ipython/profile_default/ipython_config.py
 ln -si $HOME/.ipython/startup/utils.py $HOME/.ipython/profile_default/startup/utils.py
+ln -si $HOME/.dotfiles/zsh/p10k.symlink $HOME/.p10k.zsh
 
 setup_gitconfig () {
     echo 'Setting up git config files now.'

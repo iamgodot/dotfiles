@@ -45,6 +45,7 @@ return {
 		--  the `settings` field of the server config. You must look up that documentation yourself.
 		local servers = {
 			pyright = {},
+			lua_ls = {},
 		}
 
 		-- nvim-cmp supports additional completion capabilities, so broadcast that to servers

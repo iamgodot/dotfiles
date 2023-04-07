@@ -13,7 +13,7 @@ arch-install:
 pip-install:
 	python3 -m pip install --user pipx
 	python3 -m pipx ensurepath
-	while read -r pkg;do pipx install $$pkg;done < ./scripts/inventory/pip.txt
+	while read -r pkg;do pipx install $pkg;done < ./scripts/inventory/pip.txt
 	echo 'Finshed pipx install.'
 
 setup-zsh:

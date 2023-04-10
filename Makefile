@@ -16,17 +16,12 @@ pip-install:
 	while read -r pkg;do pipx install $pkg;done < ./scripts/inventory/pip.txt
 	echo 'Finshed pipx install.'
 
-setup-zsh:
-	./scripts/setup-zsh.sh
-
-setup-dotfiles:
+setup:
 	./scripts/setup.sh
-
-setup-all: setup-zsh setup-dotfiles
 	echo 'Finished setup.'
 
-config-mac: brew-install pip-install setup-all
+config-mac: brew-install pip-install setup
 	echo 'Finished config on Mac.'
 
-config-arch: arch-install pip-install setup-all
+config-arch: arch-install pip-install setup
 	echo 'Finished config on Arch.'

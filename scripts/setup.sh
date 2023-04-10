@@ -42,6 +42,12 @@ setup_zsh () {
     ~/.fzf/install
 }
 
+setup_tmux () {
+    # Install tmux plugin manager
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+}
+
 setup_dotfiles
 setup_gitconfig
 setup_zsh
+setup_tmux

@@ -92,3 +92,12 @@ bind-key p run "xclip -o -sel clip | tmux load-buffer - ; tmux paste-buffer"
 
 # synchronize panes
 bind n setw synchronize-panes
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+set -g @continuum-restore 'on'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'

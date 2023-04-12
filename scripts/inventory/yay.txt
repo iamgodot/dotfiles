@@ -4,3 +4,5 @@ clipster
 roficlip
 vim-plug
 google-chrome
+picgo-appimage
+marktext

@@ -8,7 +8,9 @@ return {
             sources = {
                 null_ls.builtins.formatting.black,
                 null_ls.builtins.formatting.isort,
-                null_ls.builtins.formatting.stylua,
+                null_ls.builtins.formatting.stylua.with({
+                    extra_args = { "--indent-type", "Spaces" },
+                }),
                 null_ls.builtins.formatting.trim_newlines,
                 null_ls.builtins.formatting.trim_whitespace,
                 null_ls.builtins.diagnostics.ruff,

@@ -1,2 +1,13 @@
 picgo
 marktext
+google-chrome
+dropbox
+notion
+docker
+iina
+raycast
+vscodium
+iterm2
+discord
+zoom
+v2rayu

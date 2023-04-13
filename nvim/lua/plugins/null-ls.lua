@@ -6,8 +6,16 @@ return {
         require("null-ls").setup({
             debug = true,
             sources = {
-                null_ls.builtins.formatting.black,
-                null_ls.builtins.formatting.isort,
+                null_ls.builtins.formatting.black.with({
+                    runtime_condition = function(params)
+                        return string.match(params.bufname, "source") == nil
+                    end,
+                }),
+                null_ls.builtins.formatting.isort.with({
+                    runtime_condition = function(params)
+                        return string.match(params.bufname, "source") == nil
+                    end,
+                }),
                 null_ls.builtins.formatting.stylua.with({
                     extra_args = { "--indent-type", "Spaces" },
                 }),

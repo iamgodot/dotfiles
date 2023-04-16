@@ -11,3 +11,5 @@ iterm2
 discord
 zoom
 v2rayu
+sogouinput
+eudic

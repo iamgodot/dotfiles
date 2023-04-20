@@ -45,6 +45,7 @@ vim.o.expandtab = true
 vim.o.smartindent = true
 
 -- set termguicolors to enable highlight groups
-vim.opt.termguicolors = true
+vim.o.termguicolors = true
 
-vim.opt.scrolloff = 15
+vim.o.scrolloff = 15
+vim.o.list = true

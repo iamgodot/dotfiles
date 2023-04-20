@@ -3,7 +3,8 @@ return {
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
         local null_ls = require("null-ls")
-        require("null-ls").setup({
+        local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+        null_ls.setup({
             debug = false,
             sources = {
                 null_ls.builtins.formatting.black.with({
@@ -11,7 +12,8 @@ return {
                         return string.match(params.bufname, "source") == nil
                     end,
                 }),
-                null_ls.builtins.formatting.isort.with({
+                null_ls.builtins.formatting.ruff.with({
+                    extra_args = { "--select", "I" },
                     runtime_condition = function(params)
                         return string.match(params.bufname, "source") == nil
                     end,

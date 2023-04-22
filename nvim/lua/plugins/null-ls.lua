@@ -23,6 +23,8 @@ return {
                 }),
                 null_ls.builtins.formatting.trim_newlines,
                 null_ls.builtins.formatting.trim_whitespace,
+                null_ls.builtins.formatting.prettier,
+                null_ls.builtins.diagnostics.yamllint,
                 null_ls.builtins.diagnostics.ruff,
             },
             on_attach = function(client, bufnr)

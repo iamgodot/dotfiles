@@ -45,12 +45,15 @@ return {
         --  the `settings` field of the server config. You must look up that documentation yourself.
         local servers = {
             pyright = {},
+            -- ruff_lsp = {},
             lua_ls = {},
         }
 
         -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+        -- local pyright_capabilities = vim.lsp.protocol.make_client_capabilities()
+        -- pyright_capabilities.textDocument["publishDiagnostics"] = { tagSupport = { valueSet = { 2 } } }
 
         -- Setup mason so it can manage external tooling
         require("mason").setup()
@@ -70,6 +73,15 @@ return {
                     capabilities = capabilities,
                     on_attach = on_attach,
                     settings = servers[server_name],
+                })
+            end,
+            ["pyright"] = function()
+                local pyright_capabilities = vim.lsp.protocol.make_client_capabilities()
+                pyright_capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
+                require("lspconfig")["pyright"].setup({
+                    capabilities = pyright_capabilities,
+                    on_attach = on_attach,
+                    settings = servers["pyright"],
                 })
             end,
         })

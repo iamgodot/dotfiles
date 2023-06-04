@@ -2,6 +2,7 @@ return {
     {
         "vim-airline/vim-airline",
         config = function()
+            vim.g.airline_theme = "violet"
             vim.g.airline_powerline_fonts = 0
             vim.g["airline#extensions#whitespace#enabled"] = 1
             vim.g["airline#extensions#tabline#enabled"] = 1

@@ -43,7 +43,12 @@ Plugin = {
                 previewer = false,
             }))
         end, { desc = "[/] Fuzzily search in current buffer" })
-        vim.keymap.set("n", "<leader>p", builtin.find_files, { desc = "[S]earch [F]iles" })
+        vim.keymap.set(
+            "n",
+            "<leader>p",
+            "<cmd>lua require'telescope.builtin'.find_files({ find_command = {'rg', '--files', '--hidden', '-g', '!.git' }})<cr>",
+            { desc = "[S]earch [F]iles" }
+        )
         vim.keymap.set("n", "<leader>h", builtin.help_tags, { desc = "[S]earch [H]elp" })
         vim.keymap.set("n", "<leader>w", builtin.grep_string, { desc = "[S]earch current [W]ord" })
         vim.keymap.set("n", "<leader>f", builtin.live_grep, { desc = "[S]earch by [G]rep" })

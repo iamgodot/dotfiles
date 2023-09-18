@@ -12,20 +12,13 @@ return {
                         return string.match(params.bufname, "source") == nil
                     end,
                 }),
-                null_ls.builtins.formatting.ruff.with({
-                    extra_args = { "--select", "I" },
-                    runtime_condition = function(params)
-                        return string.match(params.bufname, "source") == nil
-                    end,
-                }),
                 null_ls.builtins.formatting.stylua.with({
                     extra_args = { "--indent-type", "Spaces" },
                 }),
                 null_ls.builtins.formatting.trim_newlines,
                 null_ls.builtins.formatting.trim_whitespace,
-                null_ls.builtins.formatting.prettier,
+                -- null_ls.builtins.formatting.yq,
                 null_ls.builtins.diagnostics.yamllint,
-                null_ls.builtins.diagnostics.ruff,
             },
             on_attach = function(client, bufnr)
                 if client.supports_method("textDocument/formatting") then

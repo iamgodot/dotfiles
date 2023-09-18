@@ -8,7 +8,12 @@ return {
     },
     config = function()
         -- LSP settings.
-        --  This function gets run when an LSP connects to a particular buffer.
+        -- This function gets run when an LSP connects to a particular buffer.
+        require("mason").setup()
+        local servers = { "pyright", "lua_ls", "ruff_lsp" }
+        require("mason-lspconfig").setup({ ensure_installed = servers })
+        local lsp = require("lspconfig")
+        -- Python
         local on_attach = function(_, bufnr)
             -- NOTE: Remember that lua is a real programming language, and as such it is possible
             -- to define small helper and utility functions so you don't have to repeat yourself
@@ -36,54 +41,28 @@ return {
 
             -- Lesser used LSP functionality
             nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+
+            -- Mainly to use ruff
+            nmap("<space>ca", vim.lsp.buf.code_action, "Code action")
         end
-
-        -- Enable the following language servers
-        --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-        --
-        --  Add any additional override configuration in the following tables. They will be passed to
-        --  the `settings` field of the server config. You must look up that documentation yourself.
-        local servers = {
-            pyright = {},
-            -- ruff_lsp = {},
-            lua_ls = {},
-        }
-
-        -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-        local capabilities = vim.lsp.protocol.make_client_capabilities()
-        capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-        -- local pyright_capabilities = vim.lsp.protocol.make_client_capabilities()
-        -- pyright_capabilities.textDocument["publishDiagnostics"] = { tagSupport = { valueSet = { 2 } } }
-
-        -- Setup mason so it can manage external tooling
-        require("mason").setup()
-
-        -- Ensure the servers above are installed
-        local mason_lspconfig = require("mason-lspconfig")
-
-        mason_lspconfig.setup({
-            ensure_installed = vim.tbl_keys(servers),
+        local capabilities_py = vim.lsp.protocol.make_client_capabilities()
+        capabilities_py.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
+        lsp["pyright"].setup({
+            on_attach = on_attach,
+            capabilities = capabilities_py,
         })
-
-        -- See :h mason-lspconfig-quickstart
-        -- This is for a default handler and more dedicated handlers for LS servers
-        mason_lspconfig.setup_handlers({
-            function(server_name)
-                require("lspconfig")[server_name].setup({
-                    capabilities = capabilities,
-                    on_attach = on_attach,
-                    settings = servers[server_name],
-                })
-            end,
-            ["pyright"] = function()
-                local pyright_capabilities = vim.lsp.protocol.make_client_capabilities()
-                pyright_capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
-                require("lspconfig")["pyright"].setup({
-                    capabilities = pyright_capabilities,
-                    on_attach = on_attach,
-                    settings = servers["pyright"],
-                })
-            end,
+        local capabilities_ruff = vim.lsp.protocol.make_client_capabilities()
+        lsp["ruff_lsp"].setup({
+            on_attach = on_attach,
+            capabilities = capabilities_ruff,
+            init_options = {
+                settings = {
+                    args = {
+                        "--select",
+                        "B,F,E,W,I",
+                    },
+                },
+            },
         })
     end,
 }

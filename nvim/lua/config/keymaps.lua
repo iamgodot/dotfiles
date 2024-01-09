@@ -25,3 +25,7 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- Smarter copy&paste
 vim.keymap.set("x", "<leader>x", '"_dP')
 vim.keymap.set("v", "<leader>y", '"+y')
+
+-- Folding
+vim.keymap.set("n", "zR", require("ufo").openAllFolds)
+vim.keymap.set("n", "zM", require("ufo").closeAllFolds)

@@ -44,8 +44,14 @@ vim.o.shiftwidth = 4
 vim.o.expandtab = true
 vim.o.smartindent = true
 
--- set termguicolors to enable highlight groups
+-- Set termguicolors to enable highlight groups
 vim.o.termguicolors = true
 
 vim.o.scrolloff = 15
 vim.o.list = true
+
+-- Folding
+vim.o.foldcolumn = "1" -- '0' is not bad
+vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true

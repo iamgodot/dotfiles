@@ -2,59 +2,47 @@ return {
     -- LSP Configuration & Plugins
     "neovim/nvim-lspconfig",
     dependencies = {
-        -- Automatically install LSPs to stdpath for neovim
-        { "williamboman/mason.nvim", build = ":MasonUpdate" },
-        "williamboman/mason-lspconfig.nvim",
+        "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
-        -- LSP settings.
-        -- This function gets run when an LSP connects to a particular buffer.
-        require("mason").setup()
-        local servers = { "pyright", "lua_ls", "ruff_lsp" }
-        require("mason-lspconfig").setup({ ensure_installed = servers })
         local lsp = require("lspconfig")
-        -- Python
-        local on_attach = function(_, bufnr)
-            -- NOTE: Remember that lua is a real programming language, and as such it is possible
-            -- to define small helper and utility functions so you don't have to repeat yourself
-            -- many times.
-            --
-            -- In this case, we create a function that lets us more easily define mappings specific
-            -- for LSP related items. It sets the mode, buffer and description for us each time.
-            local nmap = function(keys, func, desc)
-                if desc then
-                    desc = "LSP: " .. desc
-                end
+        local opts = { noremap = true, silent = true }
+        local on_attach = function(client, bufnr)
+            opts.buffer = bufnr
 
-                vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
-            end
+            opts.desc = "Rename"
+            vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
 
-            nmap("<leader>r", vim.lsp.buf.rename, "[R]e[n]ame")
+            opts.desc = "Go to definition"
+            vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
 
-            nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
-            nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-            nmap("<leader>j", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-            nmap("<leader>jj", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
+            opts.desc = "Go to references"
+            vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, opts)
 
-            -- See `:help K` for why this keymap
-            nmap("K", vim.lsp.buf.hover, "Hover Documentation")
+            opts.desc = "Document symbols"
+            vim.keymap.set("n", "<leader>j", require("telescope.builtin").lsp_document_symbols, opts)
 
-            -- Lesser used LSP functionality
-            nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+            opts.desc = "Workspace symbols"
+            vim.keymap.set("n", "<leader>jj", require("telescope.builtin").lsp_dynamic_workspace_symbols, opts)
 
-            -- Mainly to use ruff
-            nmap("<space>ca", vim.lsp.buf.code_action, "Code action")
+            opts.desc = "Hover Documentation"
+            vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+
+            opts.desc = "Go to declaration"
+            vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+
+            opts.desc = "Code action"
+            vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, opts)
         end
         local capabilities_py = vim.lsp.protocol.make_client_capabilities()
         capabilities_py.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
-        lsp["pyright"].setup({
+        -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
+        lsp.pyright.setup({
             on_attach = on_attach,
             capabilities = capabilities_py,
         })
-        local capabilities_ruff = vim.lsp.protocol.make_client_capabilities()
-        lsp["ruff_lsp"].setup({
+        lsp.ruff_lsp.setup({
             on_attach = on_attach,
-            capabilities = capabilities_ruff,
             init_options = {
                 settings = {
                     args = {
@@ -63,6 +51,48 @@ return {
                     },
                 },
             },
+        })
+        -- Global mappings.
+        -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+        vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
+        vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+        vim.keymap.set("n", "<space>q", vim.diagnostic.setloclist)
+
+        -- Use LspAttach autocommand to only map the following keys
+        -- after the language server attaches to the current buffer
+        vim.api.nvim_create_autocmd("LspAttach", {
+            group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+            callback = function(ev)
+                -- Enable completion triggered by <c-x><c-o>
+                vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+
+                -- Buffer local mappings.
+                -- See `:help vim.lsp.*` for documentation on any of the below functions
+                local opts = { buffer = ev.buf }
+                opts.desc = "Rename"
+                vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
+
+                opts.desc = "Go to definition"
+                vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+
+                opts.desc = "Go to references"
+                vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, opts)
+
+                opts.desc = "Document symbols"
+                vim.keymap.set("n", "<leader>j", require("telescope.builtin").lsp_document_symbols, opts)
+
+                opts.desc = "Workspace symbols"
+                vim.keymap.set("n", "<leader>jj", require("telescope.builtin").lsp_dynamic_workspace_symbols, opts)
+
+                opts.desc = "Hover Documentation"
+                vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+
+                opts.desc = "Go to declaration"
+                vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+
+                opts.desc = "Code action"
+                vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, opts)
+            end,
         })
     end,
 }

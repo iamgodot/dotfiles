@@ -13,3 +13,5 @@ ansible
 django
 poetry
 tmuxp
+pdm
+jupyterlab

@@ -13,3 +13,4 @@ zoom
 v2rayu
 sogouinput
 eudic
+pipx

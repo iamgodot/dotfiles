@@ -15,6 +15,9 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Set Python provider for faster startup
+vim.g.python3_host_prog = "/usr/local/bin/python3"
+
 -- [[ Lightspeed ]]
 -- According to doc, have to custom before plugin loading
 -- Or we need to unset/noremap after it, e.g.

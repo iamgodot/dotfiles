@@ -7,3 +7,5 @@ if [ -n "$PYTHONPATH" ]; then
 else
     export PYTHONPATH='/Users/duo/.local/pipx/venvs/pdm/lib/python3.11/site-packages/pdm/pep582'
 fi
+
+export PIPX_DEFAULT_PYTHON="/Users/duo/.pyenv/versions/3.11.3/bin/python"

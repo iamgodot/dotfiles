@@ -28,8 +28,7 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ["<C-u>"] = cmp.mapping.scroll_docs(-4),
                 ["<C-d>"] = cmp.mapping.scroll_docs(4),
-                -- Overriden by my input source switch shortcut
-                -- ["<C-Space>"] = cmp.mapping.complete({}),
+                ["<C-i>"] = cmp.mapping.complete({}),
                 ["<C-y>"] = cmp.mapping.confirm({ select = true }),
                 ["<C-e>"] = cmp.mapping.abort(),
                 ["<CR>"] = cmp.mapping.confirm({

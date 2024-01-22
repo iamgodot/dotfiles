@@ -15,6 +15,8 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.o.termguicolors = true
+
 -- Set Python provider for faster startup
 vim.g.python3_host_prog = "/usr/local/bin/python3"
 

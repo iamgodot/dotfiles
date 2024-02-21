@@ -21,6 +21,10 @@ return {
                 "pyright",
                 "lua_ls",
                 "ruff_lsp",
+                "tsserver",
+                "eslint",
+                "emmet_language_server",
+                "prismals",
             },
             -- auto-install configured servers (with lspconfig)
             automatic_installation = true, -- not the same as ensure_installed

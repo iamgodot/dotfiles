@@ -52,6 +52,17 @@ return {
                 },
             },
         })
+        lsp.tsserver.setup({
+            on_attach = on_attach,
+            init_options = {
+                preferences = {
+                    disableSuggestions = true,
+                },
+            },
+        })
+        lsp.tailwindcss.setup({})
+        lsp.emmet_language_server.setup({})
+        lsp.prismals.setup({})
         -- Global mappings.
         -- See `:help vim.diagnostic.*` for documentation on any of the below functions
         vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)

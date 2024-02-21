@@ -17,8 +17,10 @@ return {
                 }),
                 null_ls.builtins.formatting.trim_newlines,
                 null_ls.builtins.formatting.trim_whitespace,
+                null_ls.builtins.formatting.prettier,
                 -- null_ls.builtins.formatting.yq,
                 null_ls.builtins.diagnostics.yamllint,
+                -- null_ls.builtins.diagnostics.eslint,
             },
             on_attach = function(client, bufnr)
                 if client.supports_method("textDocument/formatting") then

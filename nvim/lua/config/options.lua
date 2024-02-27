@@ -8,6 +8,13 @@ vim.o.hlsearch = true
 vim.wo.number = true
 vim.o.relativenumber = true
 
+-- Better splitting
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+
+-- Cursor line highlight
+vim.opt.cursorline = true
+
 -- Enable mouse mode
 vim.o.mouse = "a"
 

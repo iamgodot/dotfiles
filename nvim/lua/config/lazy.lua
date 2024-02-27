@@ -34,7 +34,8 @@ require("lazy").setup({
         { "joshdick/onedark.vim" },
         { "overcache/NeoSolarized" },
         { "folke/tokyonight.nvim" },
-        { "catppuccin/nvim", name = "catppuccin" },
+        { "catppuccin/nvim" },
+        { "rose-pine/neovim" },
 
         -- Miscellaneous
         { "tpope/vim-surround" },

@@ -10,7 +10,5 @@
 	autocorrect = 0
 [commit]
 	template = ~/.gitmessage
-[http]
-	proxy = http://localhost:1087
 [init]
 	defaultBranch = main

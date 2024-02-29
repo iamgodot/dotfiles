@@ -20,7 +20,7 @@ return {
                 null_ls.builtins.formatting.prettier,
                 -- null_ls.builtins.formatting.yq,
                 null_ls.builtins.diagnostics.yamllint,
-                -- null_ls.builtins.diagnostics.eslint,
+                null_ls.builtins.diagnostics.eslint,
             },
             on_attach = function(client, bufnr)
                 if client.supports_method("textDocument/formatting") then

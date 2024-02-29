@@ -8,6 +8,7 @@ return {
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-nvim-lsp-signature-help",
         "rafamadriz/friendly-snippets",
+        "onsails/lspkind.nvim",
     },
     config = function()
         vim.opt.completeopt = { "menu", "menuone", "noselect" }
@@ -16,6 +17,7 @@ return {
 
         local cmp = require("cmp")
         local luasnip = require("luasnip")
+        local lspkind = require("lspkind")
 
         local select_opts = { behavior = cmp.SelectBehavior.Select }
 
@@ -29,11 +31,10 @@ return {
                 ["<C-u>"] = cmp.mapping.scroll_docs(-4),
                 ["<C-d>"] = cmp.mapping.scroll_docs(4),
                 ["<C-i>"] = cmp.mapping.complete({}),
-                ["<C-y>"] = cmp.mapping.confirm({ select = true }),
                 ["<C-e>"] = cmp.mapping.abort(),
                 ["<CR>"] = cmp.mapping.confirm({
-                    -- behavior = cmp.ConfirmBehavior.Replace,
-                    select = false,
+                    select = true,
+                    behavior = cmp.ConfirmBehavior.Replace,
                 }),
                 ["<C-f>"] = cmp.mapping(function(fallback)
                     if luasnip.jumpable(1) then
@@ -80,18 +81,15 @@ return {
                 documentation = cmp.config.window.bordered(),
             },
             formatting = {
-                fields = { "menu", "abbr", "kind" },
-                format = function(entry, item)
-                    local menu_icon = {
-                        nvim_lsp = "lsp",
-                        luasnip = "snip",
-                        buffer = "buf",
-                        path = "path",
-                    }
-
-                    item.menu = menu_icon[entry.source.name]
-                    return item
-                end,
+                expandable_indicator = true,
+                format = lspkind.cmp_format({
+                    mode = "symbol_text",
+                    maxwidth = 50,
+                    ellipsis_char = "...",
+                }),
+            },
+            experimental = {
+                ghost_text = true,
             },
         })
     end,

@@ -2,6 +2,9 @@ return {
     {
         "stevearc/oil.nvim",
         dependencies = { "nvim-tree/nvim-web-devicons" },
+        keys = {
+            { "<leader>e", ":Oil --float<cr>", desc = "Oil" },
+        },
         config = function()
             require("oil").setup({
                 view_options = {
@@ -30,7 +33,6 @@ return {
                     ["g\\"] = "actions.toggle_trash",
                 },
             })
-            vim.keymap.set("n", "<leader>e", ":Oil --float<CR>", { noremap = true })
         end,
     },
 }

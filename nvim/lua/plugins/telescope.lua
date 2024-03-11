@@ -1,7 +1,16 @@
-Plugin = {
+return {
     "nvim-telescope/telescope.nvim",
-    version = "*",
-    dependencies = { "nvim-lua/plenary.nvim", "debugloop/telescope-undo.nvim", "jonarrien/telescope-cmdline.nvim" },
+    tag = "0.1.5",
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+        "debugloop/telescope-undo.nvim",
+        "jonarrien/telescope-cmdline.nvim",
+    },
+    keys = {
+        { ":", "<cmd>Telescope cmdline<cr>", desc = "[S]earch [C]ommandline" },
+        { "<leader>u", "<cmd>Telescope undo<cr>", desc = "[S]earch [U]ndos" },
+    },
     config = function()
         local telescope = require("telescope")
         telescope.setup({
@@ -83,19 +92,5 @@ Plugin = {
         vim.keymap.set("n", "<leader>cs", builtin.colorscheme, { desc = "[S]earch [C]olorschemes" })
         vim.keymap.set("n", "<leader>v", builtin.vim_options, { desc = "[S]earch [V]im options" })
         vim.keymap.set("n", "<leader>g", builtin.git_commits, { desc = "[S]earch [G]it commits" })
-
-        vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>", { desc = "[S]earch [U]ndos" })
-        vim.keymap.set("n", ":", "<cmd>Telescope cmdline<cr>", { desc = "[S]earch [C]ommandline" })
     end,
-}
-
-return {
-    Plugin,
-    {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build = "make",
-        cond = function()
-            return vim.fn.executable("make") == 1
-        end,
-    },
 }

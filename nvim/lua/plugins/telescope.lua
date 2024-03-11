@@ -1,13 +1,9 @@
 Plugin = {
     "nvim-telescope/telescope.nvim",
     version = "*",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim", "debugloop/telescope-undo.nvim", "jonarrien/telescope-cmdline.nvim" },
     config = function()
-        -- Enable telescope fzf native, if installed
-        pcall(require("telescope").load_extension, "fzf")
-
         local telescope = require("telescope")
-        local actions = require("telescope.actions")
         telescope.setup({
             defaults = {
                 mappings = {
@@ -32,7 +28,37 @@ Plugin = {
                     },
                 },
             },
+            extensions = {
+                undo = {
+                    side_by_side = true,
+                    layout_strategy = "vertical",
+                    layout_config = {
+                        preview_height = 0.8,
+                    },
+                    mappings = {
+                        i = {
+                            ["<cr>"] = require("telescope-undo.actions").yank_additions,
+                            ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
+                            ["<C-cr>"] = require("telescope-undo.actions").restore,
+                            -- alternative defaults, for users whose terminals do questionable things with modified <cr>
+                            ["<C-y>"] = require("telescope-undo.actions").yank_deletions,
+                            ["<C-r>"] = require("telescope-undo.actions").restore,
+                        },
+                    },
+                },
+                cmdline = {
+                    mappings = {
+                        complete = "<Tab>",
+                        run_selection = "<C-r>",
+                        run_input = "<CR>",
+                    },
+                },
+            },
         })
+
+        require("telescope").load_extension("fzf")
+        require("telescope").load_extension("undo")
+        require("telescope").load_extension("cmdline")
 
         -- See `:help telescope.builtin`
         builtin = require("telescope.builtin")
@@ -57,6 +83,9 @@ Plugin = {
         vim.keymap.set("n", "<leader>cs", builtin.colorscheme, { desc = "[S]earch [C]olorschemes" })
         vim.keymap.set("n", "<leader>v", builtin.vim_options, { desc = "[S]earch [V]im options" })
         vim.keymap.set("n", "<leader>g", builtin.git_commits, { desc = "[S]earch [G]it commits" })
+
+        vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>", { desc = "[S]earch [U]ndos" })
+        vim.keymap.set("n", ":", "<cmd>Telescope cmdline<cr>", { desc = "[S]earch [C]ommandline" })
     end,
 }
 

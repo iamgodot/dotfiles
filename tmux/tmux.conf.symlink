@@ -99,7 +99,7 @@ set -g @continuum-save-interval '15'
 # -- theme ----------------------------------------------------------------
 
 set -g @plugin 'niksingh710/minimal-tmux-status'
-set -g @minimal-tmux-status "top"
+set -g @minimal-tmux-status "bottom"
 bind-key b set-option status
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)

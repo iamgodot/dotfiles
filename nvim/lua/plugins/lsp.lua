@@ -60,6 +60,14 @@ return {
                 },
             },
         })
+        lsp.lua_ls.setup({
+            on_attach = on_attach,
+            init_options = {
+                workspace = {
+                    checkThirdParty = true,
+                },
+            },
+        })
         lsp.tailwindcss.setup({})
         lsp.emmet_language_server.setup({})
         lsp.prismals.setup({})

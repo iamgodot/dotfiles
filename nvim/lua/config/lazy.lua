@@ -40,7 +40,6 @@ require("lazy").setup({
         -- Miscellaneous
         { "tpope/vim-surround" },
         { "ggandor/lightspeed.nvim" },
-        { "norcalli/nvim-colorizer.lua" },
 
         { import = "plugins" },
     },

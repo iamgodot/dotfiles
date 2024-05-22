@@ -6,8 +6,8 @@ vim.keymap.set("i", "<C-c>", "<ESC>")
 vim.keymap.set("n", "<C-p>", ":noh<CR>")
 
 -- Tabs
-vim.keymap.set("n", "tn", ":tabn<CR>")
-vim.keymap.set("n", "tp", ":tabp<CR>")
+vim.keymap.set("n", "<C-tab>", ":tabn<CR>")
+vim.keymap.set("n", "<S-C-tab>", ":tabp<CR>")
 vim.keymap.set("n", "tt", ":tabnew")
 vim.keymap.set("n", "tc", ":tabclose")
 vim.keymap.set("n", "ts", ":tab split<CR>")

@@ -4,6 +4,7 @@ return {
     dependencies = {
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
+        "hrsh7th/cmp-cmdline",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-nvim-lsp-signature-help",
@@ -19,7 +20,27 @@ return {
         local luasnip = require("luasnip")
         local lspkind = require("lspkind")
 
-        local select_opts = { behavior = cmp.SelectBehavior.Select }
+        -- `/` cmdline setup.
+        cmp.setup.cmdline("/", {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = {
+                { name = "buffer" },
+            },
+        })
+        -- `:` cmdline setup.
+        cmp.setup.cmdline(":", {
+            mapping = cmp.mapping.preset.cmdline(),
+            sources = cmp.config.sources({
+                { name = "path" },
+            }, {
+                {
+                    name = "cmdline",
+                    option = {
+                        ignore_cmds = { "Man", "!" },
+                    },
+                },
+            }),
+        })
 
         cmp.setup({
             snippet = {
@@ -72,9 +93,9 @@ return {
             sources = {
                 { name = "nvim_lsp_signature_help" },
                 { name = "path" },
-                { name = "nvim_lsp", keyword_length = 1 },
-                { name = "buffer", keyword_length = 3 },
-                { name = "luasnip", keyword_length = 2 },
+                { name = "nvim_lsp",               keyword_length = 1 },
+                { name = "buffer",                 keyword_length = 3 },
+                { name = "luasnip",                keyword_length = 2 },
             },
             window = {
                 completion = cmp.config.window.bordered(),

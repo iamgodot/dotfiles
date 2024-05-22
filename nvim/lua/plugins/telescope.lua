@@ -5,10 +5,8 @@ return {
         "nvim-lua/plenary.nvim",
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
         "debugloop/telescope-undo.nvim",
-        "jonarrien/telescope-cmdline.nvim",
     },
     keys = {
-        { ":", "<cmd>Telescope cmdline<cr>", desc = "[S]earch [C]ommandline" },
         { "<leader>u", "<cmd>Telescope undo<cr>", desc = "[S]earch [U]ndos" },
     },
     config = function()
@@ -55,22 +53,11 @@ return {
                         },
                     },
                 },
-                cmdline = {
-                    mappings = {
-                        complete = "<Tab>",
-                        run_selection = "<C-r>",
-                        run_input = "<CR>",
-                    },
-                    overseer = {
-                        enabled = false,
-                    },
-                },
             },
         })
 
         require("telescope").load_extension("fzf")
         require("telescope").load_extension("undo")
-        require("telescope").load_extension("cmdline")
 
         -- See `:help telescope.builtin`
         builtin = require("telescope.builtin")

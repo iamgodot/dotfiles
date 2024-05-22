@@ -4,5 +4,5 @@ return {
     keys = {
         { "<leader>t", "<cmd>TodoTelescope<cr>", desc = "Todo-comments" },
     },
-    opts = {},
+    config = true,
 }

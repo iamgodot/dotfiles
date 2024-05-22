@@ -19,8 +19,6 @@ return {
             opleader = {
                 ---Line-comment keymap
                 line = "<leader>c",
-                ---Block-comment keymap
-                block = "<leader>b",
             },
         })
     end,

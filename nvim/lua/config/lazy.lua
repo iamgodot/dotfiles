@@ -36,7 +36,6 @@ require("lazy").setup({
     { "catppuccin/nvim" },
     { "rose-pine/neovim" },
     -- Miscellaneous
-    { "tpope/vim-surround" },
     { "ggandor/lightspeed.nvim" },
     { import = "plugins" },
 }, {

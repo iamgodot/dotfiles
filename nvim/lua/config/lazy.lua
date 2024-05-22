@@ -18,17 +18,10 @@ vim.g.maplocalleader = " "
 vim.o.termguicolors = true
 
 -- Set Python provider for faster startup
-vim.g.python3_host_prog = "/usr/local/bin/python3"
-
--- [[ Lightspeed ]]
--- According to doc, have to custom before plugin loading
--- Or we need to unset/noremap after it, e.g.
--- vim.keymap.set('n', 's', 's', { noremap = true })
-vim.keymap.set("n", "<leader>s", "<Plug>Lightspeed_s")
-vim.keymap.set("n", "<leader>S", "<Plug>Lightspeed_S")
+vim.g.python3_host_prog = "~/.pyenv/versions/3.11.3/envs/neovim/bin/python3"
 
 require("lazy").setup({
-    { "folke/neodev.nvim",        opts = {} },
+    { "folke/neodev.nvim", config = true },
     -- Colorschemes
     { "liuchengxu/space-vim-dark" },
     { "joshdick/onedark.vim" },
@@ -36,7 +29,6 @@ require("lazy").setup({
     { "catppuccin/nvim" },
     { "rose-pine/neovim" },
     -- Miscellaneous
-    { "ggandor/lightspeed.nvim" },
     { import = "plugins" },
 }, {
     defaults = { lazy = false },

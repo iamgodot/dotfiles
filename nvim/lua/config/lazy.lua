@@ -1,5 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
     vim.fn.system({
         "git",
         "clone",
@@ -28,22 +28,19 @@ vim.keymap.set("n", "<leader>s", "<Plug>Lightspeed_s")
 vim.keymap.set("n", "<leader>S", "<Plug>Lightspeed_S")
 
 require("lazy").setup({
-    spec = {
-        -- Colorschemes
-        { "liuchengxu/space-vim-dark" },
-        { "joshdick/onedark.vim" },
-        { "overcache/NeoSolarized" },
-        { "folke/tokyonight.nvim" },
-        { "catppuccin/nvim" },
-        { "rose-pine/neovim" },
-
-        -- Miscellaneous
-        { "tpope/vim-surround" },
-        { "ggandor/lightspeed.nvim" },
-
-        { import = "plugins" },
-    },
-    defaults = { lazy = false, version = false },
+    { "folke/neodev.nvim",        opts = {} },
+    -- Colorschemes
+    { "liuchengxu/space-vim-dark" },
+    { "joshdick/onedark.vim" },
+    { "folke/tokyonight.nvim" },
+    { "catppuccin/nvim" },
+    { "rose-pine/neovim" },
+    -- Miscellaneous
+    { "tpope/vim-surround" },
+    { "ggandor/lightspeed.nvim" },
+    { import = "plugins" },
+}, {
+    defaults = { lazy = false },
     checker = { enabled = true, notify = false },
     change_detection = { enabled = true, notify = false },
 })

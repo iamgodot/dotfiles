@@ -1,5 +1,8 @@
 env:
   TERM: alacritty
+key_bindings:
+  - { key: Tab, mods: Control, chars: "\x1b[9;5u" }
+  - { key: Tab, mods: Shift|Control, chars: "\x1b[9;6u" }
 window:
   dimensions:
     columns: 140

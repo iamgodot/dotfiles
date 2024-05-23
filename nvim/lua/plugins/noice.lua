@@ -10,6 +10,18 @@ return {
                 ["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
             },
         },
+        routes = {
+            {
+                filter = {
+                    event = "notify",
+                    find = "No information available",
+                },
+                opts = { skip = true },
+            },
+        },
+        presets = {
+            lsp_doc_border = true,
+        },
     },
     dependencies = {
         -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries

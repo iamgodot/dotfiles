@@ -29,7 +29,6 @@ require("lazy").setup({
     { "catppuccin/nvim" },
     { "rose-pine/neovim" },
     -- Miscellaneous
-    { "github/copilot.vim" },
     { import = "plugins" },
 }, {
     defaults = { lazy = false },

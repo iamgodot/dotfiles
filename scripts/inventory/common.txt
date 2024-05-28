@@ -1,7 +1,8 @@
 zsh
 tmux
 neovim
-tree
+lsd
+zoxide
 fd
 the_silver_searcher
 jq

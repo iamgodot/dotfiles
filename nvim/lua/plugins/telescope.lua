@@ -61,7 +61,7 @@ return {
         require("telescope").load_extension("undo")
 
         -- See `:help telescope.builtin`
-        builtin = require("telescope.builtin")
+        local builtin = require("telescope.builtin")
         vim.keymap.set("n", "<leader>b", builtin.buffers, { desc = "[ ] Find existing buffers" })
         vim.keymap.set("n", "<leader>/", function()
             builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({

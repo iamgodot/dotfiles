@@ -7,7 +7,7 @@ return {
     config = function()
         local lsp = require("lspconfig")
         local opts = { noremap = true, silent = true }
-        local on_attach = function(client, bufnr)
+        local on_attach = function(bufnr)
             opts.buffer = bufnr
 
             opts.desc = "Rename"

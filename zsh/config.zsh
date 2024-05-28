@@ -1,19 +1,14 @@
-# Oh-my-zsh
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-plugins=(
-  z
-  git
-  encode64
-  zsh-autosuggestions
-)
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
-
-source $ZSH/oh-my-zsh.sh
-
 # Shell
 export VISUAL="nvim"
 export EDITOR="$VISUAL"
+
+# Setup emacs keybindings
+bindkey -e
+
+# Load completion module
+autoload -U compinit && compinit
+
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 setopt histignorealldups
 

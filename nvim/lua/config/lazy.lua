@@ -21,7 +21,7 @@ vim.o.termguicolors = true
 vim.g.python3_host_prog = "~/.pyenv/versions/3.11.3/envs/neovim/bin/python3"
 
 require("lazy").setup({
-    { "folke/neodev.nvim", config = true },
+    { "folke/neodev.nvim",        config = true },
     -- Colorschemes
     { "liuchengxu/space-vim-dark" },
     { "joshdick/onedark.vim" },

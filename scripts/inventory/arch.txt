@@ -1,5 +1,6 @@
 alacritty
 zsh
+zsh-autosuggestions
 starship
 fzf
 tmux

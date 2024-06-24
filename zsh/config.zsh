@@ -12,7 +12,7 @@ OS=$(uname -s)
 if [[ "$OS" == "Darwin" ]]; then
     source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 else
-    source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 setopt histignorealldups

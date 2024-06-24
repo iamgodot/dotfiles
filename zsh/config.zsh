@@ -8,7 +8,12 @@ bindkey -e
 # Load completion module
 autoload -U compinit && compinit
 
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+OS=$(uname -s)
+if [[ "$OS" == "Darwin" ]]; then
+    source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+else
+    source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
 setopt histignorealldups
 

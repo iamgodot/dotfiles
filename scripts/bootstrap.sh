@@ -12,7 +12,7 @@ create_folders() {
 }
 
 setup_dotfiles () {
-    ln -si $DOTFILES_DIR/alacritty/alacritty.yml $CONFIGS_DIR/alacritty/alacritty.yml
+    ln -si $DOTFILES_DIR/alacritty/alacritty.toml $CONFIGS_DIR/alacritty/alacritty.toml
     ln -si $DOTFILES_DIR/zsh/zshrc.symlink $HOME/.zshrc
     ln -si $DOTFILES_DIR/tmux/tmux.conf.symlink $HOME/.tmux.conf
     ln -si $DOTFILES_DIR/nvim $CONFIGS_DIR/nvim

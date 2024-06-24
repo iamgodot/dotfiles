@@ -1,13 +1,5 @@
-# Start x
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
-
-export ZSH=$HOME/.oh-my-zsh
-
-# Stash secretive environment variables in ~/.localrc.
-if [[ -a ~/.localrc ]]
-then
-    source ~/.localrc
-fi
+# Start Hyprland
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec Hyprland
 
 # Find all zsh files
 typeset -U config_files

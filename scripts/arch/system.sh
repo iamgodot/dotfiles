@@ -17,7 +17,8 @@ fi
 
 # Install packages
 sudo pacman -Syu --noconfirm
-sudo pacman -S --noconfirm - < ../inventory/arch.txt
+# Assume cwd is the dotfiles directory
+sudo pacman -S --noconfirm - < ./scripts/inventory/arch.txt
 
 # Set default shell to zsh if needed
 sudo chsh -s /bin/zsh "$USERNAME"

@@ -12,7 +12,8 @@ if [ "$EUID" -eq 0 ]; then
   exit
 fi
 
-../bootstrap.sh
+# Assume cwd is the dotfiles directory
+./scripts/bootstrap.sh
 
 # Print completion message
 echo "User setup completed."

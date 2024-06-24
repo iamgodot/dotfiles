@@ -1,5 +1,7 @@
 SHELL := /bin/bash
 
+.PHONY: brew-install pip-install setup config-mac arch
+
 brew-install:
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 	cat ./scripts/inventory/common.txt | xargs brew install

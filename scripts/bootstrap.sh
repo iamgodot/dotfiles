@@ -4,7 +4,7 @@ DOTFILES_DIR="$HOME/.dotfiles"
 CONFIGS_DIR="$HOME/.config"
 
 create_folders() {
-    for name in alacritty zsh tmux nvim starship git
+    for name in alacritty zsh tmux starship git
     do
         mkdir -p $CONFIGS_DIR/$name
     done

@@ -1,0 +1,15 @@
+alacritty
+zsh
+starship
+fzf
+tmux
+neovim
+lsd
+zoxide
+fd
+ttf-cascadia-mono-nerd
+otf-firamono-nerd
+otf-monaspace-nerd
+ttf-jetbrains-mono-nerd
+tig
+htop

@@ -1,4 +1,6 @@
+alacritty
 zsh
+starship
 tmux
 neovim
 lsd
@@ -9,6 +11,5 @@ jq
 tig
 pyenv
 pyenv-virtualenv
-alacritty
 cloc
 htop

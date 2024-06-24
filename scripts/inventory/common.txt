@@ -6,10 +6,8 @@ neovim
 lsd
 zoxide
 fd
-the_silver_searcher
 jq
 tig
 pyenv
-pyenv-virtualenv
 cloc
 htop

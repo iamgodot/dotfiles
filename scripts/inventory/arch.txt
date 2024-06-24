@@ -1,6 +1,5 @@
 alacritty
 zsh
-zsh-autosuggestions
 starship
 fzf
 tmux
@@ -8,9 +7,18 @@ neovim
 lsd
 zoxide
 fd
-ttf-cascadia-mono-nerd
+ttf-cascadia-code-nerd
 otf-firamono-nerd
 otf-monaspace-nerd
 ttf-jetbrains-mono-nerd
 tig
 htop
+less
+pyenv
+keyd
+waybar
+otf-font-awesome
+pavucontrol
+ripgrep
+npm
+cloc

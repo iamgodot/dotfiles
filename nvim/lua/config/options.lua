@@ -40,7 +40,7 @@ vim.o.timeoutlen = 300
 vim.o.completeopt = "menuone,noselect"
 
 -- NOTE: You should make sure your terminal supports this
-vim.cmd.colorscheme("space-vim-dark")
+vim.cmd.colorscheme("tokyonight")
 
 vim.o.swapfile = false
 

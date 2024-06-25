@@ -17,7 +17,11 @@ return {
                 }),
                 null_ls.builtins.formatting.trim_newlines,
                 null_ls.builtins.formatting.trim_whitespace,
-                null_ls.builtins.formatting.prettier,
+                null_ls.builtins.formatting.prettier.with({
+                    runtime_condition = function(params)
+                        return string.match(params.bufname, "source") == nil
+                    end,
+                }),
                 -- null_ls.builtins.formatting.yq,
                 null_ls.builtins.diagnostics.yamllint,
                 null_ls.builtins.diagnostics.eslint,

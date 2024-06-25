@@ -34,7 +34,9 @@ setup_gitconfig () {
     echo 'Finished git config setup.'
 }
 
-setup_tmux () {
+setup_other () {
+    # Install zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
     # Install tmux plugin manager
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 }
@@ -42,4 +44,4 @@ setup_tmux () {
 create_folders
 setup_dotfiles
 setup_gitconfig
-setup_tmux
+setup_other

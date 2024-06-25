@@ -20,7 +20,7 @@ return {
         },
         {
             "rcarriga/nvim-dap-ui",
-            keys = {},
+            dependencies = { "nvim-neotest/nvim-nio" },
             config = function(_, opts)
                 -- setup dap config by VsCode launch.json file
                 -- require("dap.ext.vscode").load_launchjs()

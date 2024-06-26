@@ -20,3 +20,6 @@ sudo chsh -s /bin/zsh "$USERNAME"
 
 # Install yay
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+
+# Set up ssh
+ssh-keygen -t rsa -b 4096

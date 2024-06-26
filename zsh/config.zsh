@@ -15,6 +15,10 @@ else
     source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
+HISTFILE=~/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+setopt share_history
 setopt histignorealldups
 
 fpath=($HOME/.dotfiles/zsh/functions $fpath)

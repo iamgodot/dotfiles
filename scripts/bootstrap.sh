@@ -12,6 +12,8 @@ create_folders() {
 }
 
 setup_dotfiles () {
+    ln -si $DOTFILES_DIR/arch/hypr $CONFIGS_DIR/hypr
+    ln -si $DOTFILES_DIR/arch/waybar $CONFIGS_DIR/waybar
     ln -si $DOTFILES_DIR/alacritty/alacritty.toml $CONFIGS_DIR/alacritty/alacritty.toml
     ln -si $DOTFILES_DIR/zsh/zshrc.symlink $HOME/.zshrc
     ln -si $DOTFILES_DIR/tmux/tmux.conf.symlink $HOME/.tmux.conf

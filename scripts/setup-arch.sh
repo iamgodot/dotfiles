@@ -17,3 +17,6 @@ fi
 
 # Set default shell to zsh if needed
 sudo chsh -s /bin/zsh "$USERNAME"
+
+# Install yay
+sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si

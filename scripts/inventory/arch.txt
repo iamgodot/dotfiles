@@ -29,3 +29,4 @@ fcitx5-im
 fcitx5-configtool
 bitwarden
 bitwarden-cli
+firefox

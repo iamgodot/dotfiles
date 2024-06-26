@@ -22,3 +22,10 @@ pavucontrol
 ripgrep
 npm
 cloc
+adobe-source-han-sans-cn-fonts
+adobe-source-han-serif-cn-fonts
+fcitx5
+fcitx5-im
+fcitx5-configtool
+bitwarden
+bitwarden-cli

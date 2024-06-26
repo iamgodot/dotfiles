@@ -1,11 +1,19 @@
 #!/bin/bash
 
-for name in .xinitrc .Xmodmap
-    do ln -s $HOME/.dotfiles/arch/x/$name $HOME/$name
-done
+# Check if USERNAME environment variable is set
+if [ -z "$USERNAME" ]; then
+  echo "Error: USERNAME environment variable is not set."
+  exit 1
+fi
 
-for name in i3 polybar picom
-    do ln -s $HOME/.dotfiles/arch/$name $HOME/.config/$name
-done
+# Create new user if it doesn't already exist
+if ! id "$USERNAME" &>/dev/null; then
+  sudo useradd -m -s /bin/bash "$USERNAME"
+  passwd "$USERNAME"
+  echo "User $USERNAME created."
+else
+  echo "User $USERNAME already exists!"
+fi
 
-ln -s $HOME/.dotfiles/docker $HOME/.docker
+# Set default shell to zsh if needed
+sudo chsh -s /bin/zsh "$USERNAME"

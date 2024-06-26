@@ -1,13 +1,11 @@
 SHELL := /bin/bash
 
-.PHONY: brew-install pip-install setup config-mac arch
+.PHONY: arch install-arch install-mac bootstrap
 
-brew-install:
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-	cat ./scripts/inventory/common.txt | xargs brew install
-	cat ./scripts/inventory/brew.txt | xargs brew install
-	echo 'Finshed brew install.'
+help: ## Prints help for targets with comments
+	@cat $(MAKEFILE_LIST) | grep -E '^[a-zA-Z_-]+:.*?## .*$$' | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
+# TODO: Move to a separate script
 pip-install:
 	@while read -r pkg; do \
         pipx install "$$pkg"; \
@@ -15,13 +13,21 @@ pip-install:
 	pipx inject jupyterlab jupyterlab_materialdarker
 	echo 'Finshed pipx install.'
 
-setup:
-	./scripts/setup.sh
-	echo 'Finished setup.'
+arch:  ## Set up a new Arch Linux
+	install-arch
+	USERNAME=godot ./scripts/setup-arch.sh
+	bootstrap
+	echo "Arch setup completed."
 
-config-mac: brew-install pip-install setup
-	echo 'Finished config on Mac.'
+install-arch: ## Install a preset list of packages on Arch
+	sudo pacman -Syu --noconfirm
+	sudo pacman -S --noconfirm - < ./scripts/inventory/arch.txt
 
-arch:
-	USERNAME=godot ./scripts/arch/system.sh
-	USERNAME=godot ./scripts/arch/user.sh
+install-mac: ## Install a preset list of packages on MacOS
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+	cat ./scripts/inventory/common.txt | xargs brew install
+	cat ./scripts/inventory/brew.txt | xargs brew install
+
+bootstrap: ## Install dotfiles and config
+	./scripts/bootstrap.sh
+	echo "Bootstrap completed."

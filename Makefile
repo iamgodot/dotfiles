@@ -14,9 +14,9 @@ pip-install:
 	echo 'Finshed pipx install.'
 
 arch:  ## Set up a new Arch Linux
-	install-arch
+	@$(MAKE) install-arch
 	USERNAME=godot ./scripts/setup-arch.sh
-	bootstrap
+	@$(MAKE) bootstrap
 	echo "Arch setup completed."
 
 install-arch: ## Install a preset list of packages on Arch

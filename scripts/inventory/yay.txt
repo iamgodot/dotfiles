@@ -1,8 +1,1 @@
-typora
-dropbox
-clipster
-roficlip
-vim-plug
-google-chrome
-picgo-appimage
-marktext
+rime-ice-pinyin-git

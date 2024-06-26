@@ -30,3 +30,7 @@ fcitx5-configtool
 bitwarden
 bitwarden-cli
 firefox
+man
+hyprlock
+swaybg
+hypridle

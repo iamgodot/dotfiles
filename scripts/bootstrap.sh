@@ -12,6 +12,7 @@ create_folders() {
 }
 
 setup_dotfiles () {
+    rm -rf $CONFIGS_DIR/hypr
     ln -si $DOTFILES_DIR/arch/hypr $CONFIGS_DIR/hypr
     ln -si $DOTFILES_DIR/arch/waybar $CONFIGS_DIR/waybar
     ln -si $DOTFILES_DIR/alacritty/alacritty.toml $CONFIGS_DIR/alacritty/alacritty.toml

@@ -19,7 +19,11 @@ fi
 sudo chsh -s /bin/zsh "$USERNAME"
 
 # Install yay
-sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si && cd .. && rm -rf yay
+# TODO: Install yay packages from yay.txt
+
+# Remove pre-installed login manager
+sudo pacman -Rs sddm
 
 # Set up ssh
 ssh-keygen -t rsa -b 4096

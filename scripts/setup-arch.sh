@@ -27,3 +27,6 @@ sudo pacman -Rs sddm
 
 # Set up ssh
 ssh-keygen -t rsa -b 4096
+
+# Install pyenv virtualenv
+$ git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv

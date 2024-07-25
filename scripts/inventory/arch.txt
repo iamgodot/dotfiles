@@ -34,3 +34,8 @@ man
 hyprlock
 swaybg
 hypridle
+ncdu
+rsync
+flameshot
+zathura
+unzip

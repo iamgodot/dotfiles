@@ -71,6 +71,7 @@ return {
         lsp.tailwindcss.setup({})
         lsp.emmet_language_server.setup({})
         lsp.prismals.setup({})
+        lsp.clangd.setup({})
         -- Global mappings.
         -- See `:help vim.diagnostic.*` for documentation on any of the below functions
         vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)

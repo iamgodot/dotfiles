@@ -14,6 +14,9 @@ return {
                     package_uninstalled = "✗",
                 },
             },
+            ensure_installed = {
+                "clang-format",
+            },
         })
         mason_lspconfig.setup({
             -- list of servers for mason to install
@@ -25,6 +28,7 @@ return {
                 "eslint",
                 "emmet_language_server",
                 "prismals",
+                "clangd",
             },
             -- auto-install configured servers (with lspconfig)
             automatic_installation = true, -- not the same as ensure_installed

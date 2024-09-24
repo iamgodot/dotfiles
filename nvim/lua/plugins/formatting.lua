@@ -6,6 +6,7 @@ return {
         -- TODO: let Mason handle installation of formatters
         conform.setup({
             formatters_by_ft = {
+                c = { "clang-format" },
                 lua = { "stylua" },
                 python = { "black" },
                 javascript = { "prettier" },

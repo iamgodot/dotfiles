@@ -41,7 +41,7 @@ return {
             on_attach = on_attach,
             capabilities = capabilities_py,
         })
-        lsp.ruff_lsp.setup({
+        lsp.ruff.setup({
             on_attach = on_attach,
             init_options = {
                 settings = {
@@ -52,7 +52,7 @@ return {
                 },
             },
         })
-        lsp.tsserver.setup({
+        lsp.ts_ls.setup({
             on_attach = on_attach,
             init_options = {
                 preferences = {

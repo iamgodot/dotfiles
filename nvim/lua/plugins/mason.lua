@@ -23,8 +23,8 @@ return {
             ensure_installed = {
                 "pyright",
                 "lua_ls",
-                "ruff_lsp",
-                "tsserver",
+                "ruff",
+                "ts_ls",
                 "eslint",
                 "emmet_language_server",
                 "prismals",

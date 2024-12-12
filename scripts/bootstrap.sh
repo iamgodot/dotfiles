@@ -21,7 +21,8 @@ setup_dotfiles () {
     ln -si $DOTFILES_DIR/nvim $CONFIGS_DIR/nvim
     ln -si $DOTFILES_DIR/starship/starship.toml $CONFIGS_DIR/starship.toml
     ln -si $DOTFILES_DIR/ipython/ipython_config.py $HOME/.ipython/profile_default/ipython_config.py
-    ln -si $DOTFILES_DIR/ipython/startup/utils.py $HOME/.ipython/profile_default/startup/utils.py
+    ln -si $DOTFILES_DIR/ipython/startup/00-initial.ipy $HOME/.ipython/profile_default/startup/00-initial.ipy
+    ln -si $DOTFILES_DIR/ipython/startup/01-utils.py $HOME/.ipython/profile_default/startup/01-utils.py
 }
 
 setup_gitconfig () {

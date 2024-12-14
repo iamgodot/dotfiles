@@ -15,7 +15,7 @@ setup_dotfiles () {
     rm -rf $CONFIGS_DIR/hypr
     ln -si $DOTFILES_DIR/arch/hypr $CONFIGS_DIR/hypr
     ln -si $DOTFILES_DIR/arch/waybar $CONFIGS_DIR/waybar
-    ln -si $DOTFILES_DIR/alacritty/alacritty.toml $CONFIGS_DIR/alacritty/alacritty.toml
+    ln -si $DOTFILES_DIR/alacritty $CONFIGS_DIR/alacritty
     ln -si $DOTFILES_DIR/zsh/zshrc.symlink $HOME/.zshrc
     ln -si $DOTFILES_DIR/tmux/tmux.conf.symlink $HOME/.tmux.conf
     ln -si $DOTFILES_DIR/nvim $CONFIGS_DIR/nvim

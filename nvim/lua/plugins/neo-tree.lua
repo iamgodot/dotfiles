@@ -7,4 +7,7 @@ return {
         "nvim-tree/nvim-web-devicons",
         "MunifTanjim/nui.nvim",
     },
+    keys = {
+        { "<leader>n", ":Neotree<CR>", desc = "Toggle auto-save" },
+    },
 }

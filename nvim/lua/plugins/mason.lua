@@ -16,6 +16,7 @@ return {
             },
             ensure_installed = {
                 "clang-format",
+                "eslint_d",
             },
         })
         mason_lspconfig.setup({
@@ -24,8 +25,7 @@ return {
                 "pyright",
                 "lua_ls",
                 "ruff",
-                "ts_ls",
-                "eslint",
+                "vtsls",
                 "emmet_language_server",
                 "prismals",
                 "clangd",

@@ -21,5 +21,7 @@ SAVEHIST=1000
 setopt share_history
 setopt histignorealldups
 
+setopt interactivecomments
+
 fpath=($HOME/.dotfiles/zsh/functions $fpath)
 autoload -U $HOME/.dotfiles/zsh/functions/*(:t)

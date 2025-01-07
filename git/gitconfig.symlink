@@ -6,9 +6,22 @@
 	co = checkout
 [core]
 	editor = vim
+    pager = delta
 [help]
 	autocorrect = 0
 [commit]
 	template = ~/.gitmessage
 [init]
 	defaultBranch = main
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true  # use n and N to move between diff sections
+    dark = true      # or light = true, or omit for auto-detection
+    line-numbers = true
+    side-by-side = true
+
+[merge]
+    conflictstyle = zdiff3

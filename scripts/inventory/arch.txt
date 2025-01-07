@@ -39,3 +39,12 @@ rsync
 flameshot
 zathura
 unzip
+bat
+git-delta
+yazi
+ffmpeg
+p7zip jq
+poppler
+imagemagick
+wezterm
+ttf-nerd-fonts-symbols-mono

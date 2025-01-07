@@ -25,3 +25,13 @@ tig
 pipx
 pyenv
 pyenv-virtualenv
+bat
+git-delta
+yazi
+ffmpeg
+sevenzip
+poppler
+ripgrep
+imagemagick
+font-symbols-only-nerd-font
+wezterm

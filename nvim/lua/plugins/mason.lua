@@ -2,6 +2,7 @@ return {
     "williamboman/mason.nvim",
     dependencies = {
         "williamboman/mason-lspconfig.nvim",
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
     config = function()
         local mason = require("mason")
@@ -14,9 +15,12 @@ return {
                     package_uninstalled = "✗",
                 },
             },
+        })
+        require("mason-tool-installer").setup({
             ensure_installed = {
                 "clang-format",
                 "eslint_d",
+                "prettier",
             },
         })
         mason_lspconfig.setup({

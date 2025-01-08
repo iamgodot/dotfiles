@@ -3,8 +3,7 @@ $username\
 $hostname\
 $directory\
 $git_branch\
-$git_state\
-$git_status\
+$git_state \
 $cmd_duration\
 $character"""
 
@@ -12,9 +11,9 @@ $character"""
 style = "blue"
 
 [character]
-success_symbol = "[❯](green)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+success_symbol = "[>](green)"
+error_symbol = "[>](red)"
+vimcmd_symbol = "[<](green)"
 
 [git_branch]
 format = "[$branch]($style)"

@@ -48,3 +48,4 @@ poppler
 imagemagick
 wezterm
 ttf-nerd-fonts-symbols-mono
+stow

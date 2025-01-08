@@ -35,3 +35,4 @@ ripgrep
 imagemagick
 font-symbols-only-nerd-font
 wezterm
+stow

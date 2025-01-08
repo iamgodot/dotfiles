@@ -13,16 +13,12 @@ create_folders() {
 
 setup_dotfiles () {
     rm -rf $CONFIGS_DIR/hypr
-    ln -si $DOTFILES_DIR/arch/hypr $CONFIGS_DIR/hypr
-    ln -si $DOTFILES_DIR/arch/waybar $CONFIGS_DIR/waybar
-    ln -si $DOTFILES_DIR/alacritty $CONFIGS_DIR/alacritty
-    ln -si $DOTFILES_DIR/zsh/zshrc.symlink $HOME/.zshrc
-    ln -si $DOTFILES_DIR/tmux/tmux.conf.symlink $HOME/.tmux.conf
-    ln -si $DOTFILES_DIR/nvim $CONFIGS_DIR/nvim
-    ln -si $DOTFILES_DIR/starship/starship.toml $CONFIGS_DIR/starship.toml
-    ln -si $DOTFILES_DIR/ipython/ipython_config.py $HOME/.ipython/profile_default/ipython_config.py
-    ln -si $DOTFILES_DIR/ipython/startup/00-initial.ipy $HOME/.ipython/profile_default/startup/00-initial.ipy
-    ln -si $DOTFILES_DIR/ipython/startup/01-utils.py $HOME/.ipython/profile_default/startup/01-utils.py
+    mkdir -p ~/.config/hypr && stow -d arch -t ~/.config/hypr hypr
+    mkdir -p ~/.config/waybar && stow -d arch -t ~/.config/waybar waybar
+    stow zsh tmux wezterm
+    stow -t ~/.config starship
+    mkdir -p ~/.config/nvim && stow -t ~/.config/nvim nvim
+    stow -t ~/.ipython/profile_default ipython
 }
 
 setup_gitconfig () {

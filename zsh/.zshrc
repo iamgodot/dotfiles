@@ -24,3 +24,9 @@ do
 done
 
 unset config_files
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/duo/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/duo/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/duo/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/duo/google-cloud-sdk/completion.zsh.inc'; fi

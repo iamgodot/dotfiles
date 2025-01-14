@@ -53,7 +53,7 @@ return {
         indent = { enabled = true },
         quickfile = { enabled = true },
         statuscolumn = { enabled = true, folds = { open = true } },
-        terminal = { enabled = true },
+        terminal = { enabled = false },
     },
     keys = {
         {

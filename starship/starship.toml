@@ -3,7 +3,7 @@ $username\
 $hostname\
 $directory\
 $git_branch\
-$git_state\
+$git_state \
 $cmd_duration\
 $character"""
 

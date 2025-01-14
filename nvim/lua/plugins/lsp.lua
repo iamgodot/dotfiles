@@ -39,6 +39,9 @@ return {
                 -- Buffer local mappings.
                 -- See `:help vim.lsp.*` for documentation on any of the below functions
                 local opts = { buffer = ev.buf }
+                opts.desc = "Code actions"
+                vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+
                 opts.desc = "Rename"
                 vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
 

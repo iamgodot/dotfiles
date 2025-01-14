@@ -27,10 +27,8 @@ setup_gitconfig () {
     read -e git_author_name
     echo 'What is your github author email?'
     read -e git_author_email
-    sed -e "s/AUTHORNAME/$git_author_name/g" -e "s/AUTHOREMAIL/$git_author_email/g" $DOTFILES_DIR/git/gitconfig.local.symlink.example > $DOTFILES_DIR/git/gitconfig.local.symlink
-    ln -si $DOTFILES_DIR/git/gitconfig.symlink $HOME/.gitconfig
-    ln -si $DOTFILES_DIR/git/gitconfig.local.symlink $HOME/.gitconfig.local
-    ln -si $DOTFILES_DIR/git/gitmessage.symlink $HOME/.gitmessage
+    sed -e "s/AUTHORNAME/$git_author_name/g" -e "s/AUTHOREMAIL/$git_author_email/g" $DOTFILES_DIR/git/.gitconfig.local.example > $DOTFILES_DIR/git/.gitconfig.local
+    stow git
     echo 'Finished git config setup.'
 }
 

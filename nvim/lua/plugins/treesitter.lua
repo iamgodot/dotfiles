@@ -19,6 +19,7 @@ return {
                 "html",
                 "css",
                 "regex",
+                "astro",
             },
             -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
             auto_install = true,

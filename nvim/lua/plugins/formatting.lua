@@ -18,6 +18,7 @@ return {
                 json = { "prettier" },
                 yaml = { "prettier" },
                 markdown = { "prettier" },
+                astro = { "prettier" },
                 ["_"] = { "trim_newlines", "trim_whitespace" },
             },
             formatters = {

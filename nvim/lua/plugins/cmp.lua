@@ -91,6 +91,7 @@ return {
                 end, { "i", "s" }),
             }),
             sources = {
+                { name = "supermaven" },
                 { name = "nvim_lsp_signature_help" },
                 { name = "path" },
                 { name = "nvim_lsp", keyword_length = 1 },
@@ -107,6 +108,7 @@ return {
                     mode = "symbol_text",
                     maxwidth = 50,
                     ellipsis_char = "...",
+                    symbol_map = { Supermaven = "" },
                 }),
             },
             experimental = {

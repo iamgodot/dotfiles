@@ -5,4 +5,5 @@ return {
         { "<leader>t", "<cmd>TodoTelescope<cr>", desc = "Todo-comments" },
     },
     config = true,
+    lazy = false,
 }

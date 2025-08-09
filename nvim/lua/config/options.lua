@@ -24,6 +24,7 @@ vim.o.breakindent = true
 -- Save undo history
 vim.o.undofile = true
 
+-- Case insensitive searching UNLESS /C or capital in search search search without any previous modifiers
 -- Case insensitive searching UNLESS /C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
@@ -41,6 +42,13 @@ vim.o.completeopt = "menuone,noselect"
 
 -- NOTE: You should make sure your terminal supports this
 vim.cmd.colorscheme("tokyonight")
+-- Transparent background
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "none" })
+-- vim.api.nvim_set_hl(0, "StatusLine", { bg = "none" })
 
 vim.o.swapfile = false
 

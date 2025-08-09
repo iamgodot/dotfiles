@@ -53,7 +53,7 @@ return {
         indent = { enabled = true },
         quickfile = { enabled = true },
         statuscolumn = { enabled = true, folds = { open = true } },
-        terminal = { enabled = false },
+        terminal = { win = { width = 0.6, height = 0.7, border = "rounded", position = "float" } },
     },
     keys = {
         {
@@ -66,7 +66,7 @@ return {
         {
             "<C-t>",
             function()
-                Snacks.terminal()
+                Snacks.terminal.toggle()
             end,
             desc = "Toggle Terminal",
         },

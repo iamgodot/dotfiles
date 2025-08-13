@@ -8,12 +8,7 @@ bindkey -e
 # Load completion module
 autoload -U compinit && compinit
 
-OS=$(uname -s)
-if [[ "$OS" == "Darwin" ]]; then
-    source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-else
-    source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-fi
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 HISTFILE=~/.zsh_history
 HISTSIZE=1000

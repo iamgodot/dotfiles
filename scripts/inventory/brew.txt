@@ -34,5 +34,6 @@ poppler
 ripgrep
 imagemagick
 font-symbols-only-nerd-font
+font-caskaydia-cove-nerd-font
 wezterm
 stow

@@ -15,7 +15,7 @@ setup_dotfiles () {
     rm -rf $CONFIGS_DIR/hypr
     mkdir -p ~/.config/hypr && stow -d arch -t ~/.config/hypr hypr
     mkdir -p ~/.config/waybar && stow -d arch -t ~/.config/waybar waybar
-    stow zsh tmux wezterm
+    stow -t ~ zsh tmux wezterm
     stow -t ~/.config starship
     mkdir -p ~/.config/nvim && stow -t ~/.config/nvim nvim
     stow -t ~/.ipython/profile_default ipython

@@ -15,5 +15,14 @@ return {
                 newfile = "[New]",
             },
         },
+        sections = {
+            lualine_a = {
+                {
+                    require("noice").api.status.mode.get,
+                    cond = require("noice").api.status.mode.has,
+                },
+                "mode",
+            },
+        },
     },
 }

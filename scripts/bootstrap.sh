@@ -17,6 +17,7 @@ setup_dotfiles () {
     mkdir -p ~/.config/waybar && stow -d arch -t ~/.config/waybar waybar
     stow -t ~ zsh tmux wezterm
     stow -t ~/.config starship
+    stow -t ~/.config doom
     mkdir -p ~/.config/nvim && stow -t ~/.config/nvim nvim
     stow -t ~/.ipython/profile_default ipython
 }

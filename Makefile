@@ -17,6 +17,7 @@ mac: ## Set up a new MacOS
 	./scripts/setup-mac.sh
 	@$(MAKE) bootstrap
 	@$(MAKE) install-python-tools
+	@$(MAKE) install-emacs
 	echo "Mac setup completed."
 
 install-arch: ## Install a list of packages on Arch
@@ -26,6 +27,12 @@ install-arch: ## Install a list of packages on Arch
 install-mac: ## Install a list of packages on MacOS
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 	cat ./scripts/inventory/brew.txt | xargs brew install
+
+install-emacs:
+	brew tap d12frosted/emacs-plus
+	brew install emacs-plus --with-modern-papirus-icon
+	git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.config/emacs
+	~/.config/emacs/bin/doom install
 
 install-python-tools: ## Install a list of Python CLI tools via pipx
 	./scripts/install-python-tools.sh

@@ -41,21 +41,7 @@ return {
                 local opts = { buffer = ev.buf }
                 opts.desc = "Code actions"
                 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-
-                opts.desc = "Rename"
-                vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
-
-                opts.desc = "Go to definition"
-                vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-
-                opts.desc = "Go to references"
-                vim.keymap.set("n", "gr", require("telescope.builtin").lsp_references, opts)
-
-                opts.desc = "Document symbols"
-                vim.keymap.set("n", "<leader>j", require("telescope.builtin").lsp_document_symbols, opts)
-
-                opts.desc = "Workspace symbols"
-                vim.keymap.set("n", "<leader>jj", require("telescope.builtin").lsp_dynamic_workspace_symbols, opts)
+                -- Find other mappings in snacks.lua such as for "gd"
             end,
         })
     end,

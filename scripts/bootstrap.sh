@@ -4,7 +4,7 @@ DOTFILES_DIR="$HOME/.dotfiles"
 CONFIGS_DIR="$HOME/.config"
 
 create_folders() {
-    for name in alacritty zsh tmux starship git
+    for name in alacritty zsh tmux starship git doom
     do
         mkdir -p $CONFIGS_DIR/$name
     done
@@ -17,7 +17,7 @@ setup_dotfiles () {
     mkdir -p ~/.config/waybar && stow -d arch -t ~/.config/waybar waybar
     stow -t ~ zsh tmux wezterm
     stow -t ~/.config starship
-    stow -t ~/.config doom
+    stow -t ~/.config/doom doom
     mkdir -p ~/.config/nvim && stow -t ~/.config/nvim nvim
     stow -t ~/.ipython/profile_default ipython
 }

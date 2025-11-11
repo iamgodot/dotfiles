@@ -21,6 +21,7 @@ return {
                 "clang-format",
                 "eslint_d",
                 "prettier",
+                "black",
             },
         })
         mason_lspconfig.setup({
@@ -34,9 +35,11 @@ return {
                 "prismals",
                 "clangd",
                 "astro",
+                "jdtls",
             },
             -- auto-install configured servers (with lspconfig)
             automatic_installation = true, -- not the same as ensure_installed
+            automatic_enable = { exclude = { "jdtls" } },
         })
     end,
 }

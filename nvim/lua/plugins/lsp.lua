@@ -5,15 +5,14 @@ return {
         "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
-        local lsp = require("lspconfig")
-        lsp.ruff.setup({
+        vim.lsp.config("ruff", {
             init_options = {
                 settings = {
                     -- Ruff language server settings go here
                 },
             },
         })
-        lsp.pyright.setup({
+        vim.lsp.config("pyright", {
             settings = {
                 pyright = {
                     -- Using Ruff's import organizer
@@ -27,11 +26,11 @@ return {
                 },
             },
         })
-        lsp.vtsls.setup({})
-        lsp.emmet_language_server.setup({})
-        lsp.prismals.setup({})
-        lsp.clangd.setup({})
-        lsp.astro.setup({})
+        vim.lsp.enable("vtsls")
+        vim.lsp.enable("emmet_language_server")
+        vim.lsp.enable("prismals")
+        vim.lsp.enable("clangd")
+        vim.lsp.enable("astro")
         -- Use LspAttach autocommand to only map the following keys
         -- after the language server attaches to the current buffer
         vim.api.nvim_create_autocmd("LspAttach", {

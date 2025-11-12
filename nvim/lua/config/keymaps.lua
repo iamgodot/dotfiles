@@ -8,8 +8,8 @@ vim.keymap.set("n", "<C-p>", ":noh<CR>")
 -- Tabs
 vim.keymap.set("n", "tn", ":tabn<CR>")
 vim.keymap.set("n", "tp", ":tabp<CR>")
-vim.keymap.set("n", "tt", ":tabnew")
-vim.keymap.set("n", "tc", ":tabclose")
+vim.keymap.set("n", "tt", ":tabnew<CR>")
+vim.keymap.set("n", "tc", ":tabclose<CR>")
 vim.keymap.set("n", "ts", ":tab split<CR>")
 
 -- Stay in the middle

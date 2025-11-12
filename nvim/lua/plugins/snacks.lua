@@ -93,7 +93,6 @@ return {
                 },
             },
         },
-        explorer = {},
     },
     keys = {
         -- Dashboard
@@ -148,20 +147,6 @@ return {
                 Snacks.picker.grep()
             end,
             desc = "Grep",
-        },
-        {
-            "<leader>:",
-            function()
-                Snacks.picker.command_history()
-            end,
-            desc = "Command History",
-        },
-        {
-            "<leader>e",
-            function()
-                Snacks.explorer()
-            end,
-            desc = "File Explorer",
         },
         -- find
         {

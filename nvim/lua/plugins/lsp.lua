@@ -41,6 +41,8 @@ return {
                 local opts = { buffer = ev.buf }
                 opts.desc = "Code actions"
                 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+                opts.desc = "Rename"
+                vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
                 -- Find other mappings in snacks.lua such as for "gd"
             end,
         })

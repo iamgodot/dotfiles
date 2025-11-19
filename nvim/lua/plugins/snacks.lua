@@ -98,6 +98,7 @@ return {
                 },
             },
         },
+        gitbrowse = {},
     },
     keys = {
         -- Dashboard
@@ -260,6 +261,13 @@ return {
                 Snacks.picker.gh_pr({ state = "all" })
             end,
             desc = "GitHub Pull Requests (all)",
+        },
+        {
+            "<leader>gg",
+            function()
+                Snacks.gitbrowse()
+            end,
+            desc = "GitHub Open in Browser",
         },
         -- Grep
         {

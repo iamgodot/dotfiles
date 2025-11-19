@@ -18,9 +18,11 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- Move block up&down
+-- Move block up&down&left&right
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
 
 -- Smarter copy&paste
 vim.keymap.set("x", "<leader>x", '"_dP')
@@ -39,6 +41,11 @@ vim.keymap.set("n", "_", [[<cmd>horizontal resize -2<cr>]]) -- make the window s
 -- Pull out Lazy
 vim.keymap.set("n", "<leader>la", ":Lazy<CR>")
 
+-- Edit&Reload config file
+vim.keymap.set("n", "<leader>ci", function()
+    vim.cmd("edit " .. vim.fn.stdpath("config") .. "/lua/plugins/")
+end, { noremap = true })
+
 -- Return to last edit position when opening files
 vim.api.nvim_create_autocmd("BufReadPost", {
     pattern = "*",
@@ -50,3 +57,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
         end
     end,
 })
+
+-- Use <CR> to enter command line mode
+vim.keymap.set("n", "<CR>", ":", { noremap = true })

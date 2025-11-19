@@ -2,7 +2,7 @@ return {
     "NeogitOrg/neogit",
     keys = {
         { "gs", "<cmd>Neogit<cr>", desc = "Neogit" },
-        { "df", "<cmd>DiffviewClose<cr>", desc = "Close Diffview" },
+        { "dc", "<cmd>DiffviewClose<cr>", desc = "Close Diffview" },
     },
     dependencies = {
         "nvim-lua/plenary.nvim", -- required

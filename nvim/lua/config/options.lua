@@ -21,6 +21,9 @@ vim.o.mouse = "a"
 -- Enable break indent
 vim.o.breakindent = true
 
+-- Auto reload file content when changes detected
+vim.o.autoread = true
+
 -- Save undo history
 vim.o.undofile = true
 
@@ -66,6 +69,9 @@ vim.o.foldcolumn = "1" -- '0' is not bad
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
+
+-- Better keywords recognition
+vim.opt.iskeyword:append("-")
 
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {

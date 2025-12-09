@@ -18,9 +18,11 @@ return {
         })
         require("mason-tool-installer").setup({
             ensure_installed = {
+                "google-java-format",
                 "clang-format",
                 "eslint_d",
                 "prettier",
+                "stylua",
                 "black",
             },
         })

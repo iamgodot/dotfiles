@@ -9,6 +9,7 @@ return {
                 c = { "clang-format" },
                 lua = { "stylua" },
                 python = { "black" },
+                java = { "google-java-format" },
                 javascript = { "prettier" },
                 typescript = { "prettier" },
                 javascriptreact = { "prettier" },
@@ -34,6 +35,9 @@ return {
                     condition = function(self, ctx)
                         return string.match(ctx.filename, "source") == nil
                     end,
+                },
+                ["google-java-format"] = {
+                    prepend_args = { "--aosp" }, -- Ensure 4-space indentation
                 },
             },
         })

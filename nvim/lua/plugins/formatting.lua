@@ -9,7 +9,7 @@ return {
                 c = { "clang-format" },
                 lua = { "stylua" },
                 python = { "black" },
-                java = { "google-java-format" },
+                -- java = { "google-java-format" },
                 javascript = { "prettier" },
                 typescript = { "prettier" },
                 javascriptreact = { "prettier" },
@@ -20,7 +20,7 @@ return {
                 yaml = { "prettier" },
                 markdown = { "prettier" },
                 astro = { "prettier" },
-                ["_"] = { "trim_newlines", "trim_whitespace" },
+                -- ["_"] = { "trim_newlines", "trim_whitespace" },
             },
             formatters = {
                 stylua = {

@@ -1,17 +1,9 @@
 return {
-    -- LSP Configuration & Plugins
     "neovim/nvim-lspconfig",
     dependencies = {
         "hrsh7th/cmp-nvim-lsp",
     },
     config = function()
-        vim.lsp.config("ruff", {
-            init_options = {
-                settings = {
-                    -- Ruff language server settings go here
-                },
-            },
-        })
         vim.lsp.config("pyright", {
             settings = {
                 pyright = {
@@ -26,11 +18,16 @@ return {
                 },
             },
         })
+        vim.lsp.enable("pyright")
+        vim.lsp.enable("ruff")
+        vim.lsp.enable("lua_ls")
         vim.lsp.enable("vtsls")
         vim.lsp.enable("emmet_language_server")
         vim.lsp.enable("prismals")
         vim.lsp.enable("clangd")
         vim.lsp.enable("astro")
+        -- see jdtls config in java.lua
+
         -- Use LspAttach autocommand to only map the following keys
         -- after the language server attaches to the current buffer
         vim.api.nvim_create_autocmd("LspAttach", {

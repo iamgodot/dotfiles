@@ -1,7 +1,7 @@
 return {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     dependencies = {
-        "williamboman/mason-lspconfig.nvim",
+        "mason-org/mason-lspconfig.nvim",
         "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
     config = function()
@@ -27,11 +27,10 @@ return {
             },
         })
         mason_lspconfig.setup({
-            -- list of servers for mason to install
             ensure_installed = {
                 "pyright",
-                "lua_ls",
                 "ruff",
+                "lua_ls",
                 "vtsls",
                 "emmet_language_server",
                 "prismals",
@@ -39,9 +38,7 @@ return {
                 "astro",
                 "jdtls",
             },
-            -- auto-install configured servers (with lspconfig)
-            automatic_installation = true, -- not the same as ensure_installed
-            automatic_enable = { exclude = { "jdtls" } },
+            automatic_enable = false,
         })
     end,
 }
